@@ -38,17 +38,18 @@
 
 ### 리스트와 인덱스
 #### 인덱스 범위 주의
-<pre> ```my_list = [1, 2, 3]
+<pre> 
+my_list = [1, 2, 3]
 print(my_list[3])  # 에러! 인덱스 범위 초과
 print(my_list[2])  # 올바름 (마지막 요소)
-print(my_list[-1]) # 올바름 (뒤에서 첫 번째) ``` </pre>
+print(my_list[-1]) # 올바름 (뒤에서 첫 번째) </pre>
 
 #### 리스트 복사 주의
-<pre> ```
+<pre> 
 list1 = [1, 2, 3]
 list2 = list1        # 참조 복사 (같은 메모리)
 list2.append(4)
-print(list1)         # [1, 2, 3, 4] - 원본도 변경됨! ``` </pre>
+print(list1)         # [1, 2, 3, 4] - 원본도 변경됨!  </pre>
 
 #### 올바른 복사 방법
 list2 = list1.copy()  # 또는 list1[:]
