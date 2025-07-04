@@ -31,34 +31,13 @@
 
 
 #### 문자열 처리 주의사항
-**따옴표 주의**
-| #잘못된 경우 | #올바른 경우 |
-|--------------|------------|
-| text = "She said "Hello""  # 에러! | text = "She said \"Hello\""  # 올바름 text = 'She said "Hello"'   # 올바름 |
+
+<img width="628" alt="스크린샷 2025-07-04 13 49 44" src="https://github.com/user-attachments/assets/06388bea-a387-4037-8fc2-f07dca8f5bbb" />
 
 
 
-
-
-# 문자열과 숫자 연산
-# 잘못된 경우
-# 올바른 경우
-age = 25
-print("나이: " + age)   # 에러! 타입 불일치
-age = 25
-print("나이: " + str(age))   # 올바름
-print(f"나이: {age}")        # 올바름 (f-string)
-
-
-
-
-
-
-
-
-
-리스트와 인덱스
-인덱스 범위 주의
+### 리스트와 인덱스
+#### 인덱스 범위 주의
 my_list = [1, 2, 3]
 print(my_list[3])  # 에러! 인덱스 범위 초과
 print(my_list[2])  # 올바름 (마지막 요소)
@@ -70,18 +49,20 @@ list2 = list1        # 참조 복사 (같은 메모리)
 list2.append(4)
 print(list1)         # [1, 2, 3, 4] - 원본도 변경됨!
 
-# 올바른 복사 방법
+#### 올바른 복사 방법
 list2 = list1.copy()  # 또는 list1[:]
 
-반복문과 조건문
-무한 루프 주의
-# 위험한 코드
-while True:
+### 반복문과 조건문 
+
+#### 무한 루프 주의
+
+- 위험한 코드
+ while True:
     print("무한 루프!")  # Ctrl+C로 중단해야 함
 
-# 안전한 코드
-count = 0
-while count < 10:
+- 안전한 코드
+  count = 0
+  while count < 10:
     print(f"카운트: {count}")
     count += 1  # 카운터 증가 잊지 말기!
 
