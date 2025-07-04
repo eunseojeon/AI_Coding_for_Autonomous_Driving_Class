@@ -35,7 +35,7 @@
 ### ✅ Repository 만들기 순서
 
 1. **GitHub에 로그인 후 New Repository 클릭**
-2. ![new](https://github.com/user-attachments/assets/3481a680-f677-403b-be8c-1fe59d5aa7cb)
+2.  ![new](https://github.com/user-attachments/assets/3481a680-f677-403b-be8c-1fe59d5aa7cb)
 
 3. **Repository 이름 입력**
 4. **Public/Private 선택**
