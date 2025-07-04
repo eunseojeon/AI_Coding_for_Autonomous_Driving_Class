@@ -116,6 +116,7 @@ else:
     print("정상 주행")
 	</pre>
 
+<pre>
 2. 차선 변경 가능성 판단
 # 카메라 및 레이더 센서 데이터
 left_lane_clear = True
@@ -141,7 +142,10 @@ else:
     action = "차선 변경 가능"
     
 print(f"판단: {action}")
+	</pre>
 
+
+ <pre>
 3. 신호등 인식 및 대응
 # 컴퓨터 비전 처리 결과
 traffic_light_color = "yellow"
@@ -173,7 +177,9 @@ else:
     target_speed = 20
 
 print(f"신호등: {traffic_light_color}, 행동: {action}, 목표속도: {target_speed}km/h")
-
+</pre>
+	    
+<pre>
 4. 보행자 감지 및 회피
 # 보행자 감지 시스템
 pedestrian_detected = True
@@ -210,7 +216,9 @@ else:
     brake_intensity = 30
 
 print(f"보행자 상황: {action}, 제동강도: {brake_intensity}%")
-
+	    </pre>
+     
+<pre>
 5. 날씨 조건에 따른 주행 모드 조정
 # 날씨 센서 및 도로 상태
 weather_condition = "rain"
@@ -251,7 +259,10 @@ else:
 
 print(f"주행모드: {driving_mode}, 제한속도: {max_speed_limit}km/h")
 print(f"차간거리 배수: {following_distance_multiplier}배")
+	</pre>
 
+ 
+<pre>
 6. 주차 공간 감지 및 주차 가능성 판단
 # 초음파 센서 및 카메라 데이터
 parking_space_length = 5.2  # 미터
@@ -290,7 +301,11 @@ else:
 print(f"주차 가능: {parking_possible}")
 print(f"주차 방법: {parking_method}")
 print(f"여유공간 - 길이: {length_margin:.1f}m, 폭: {width_margin:.1f}m")
+</pre>
 
+
+	
+<pre>
 7. 고속도로 합류 판단
 # 고속도로 합류 상황 센서 데이터
 main_lane_traffic_speed = 90    # km/h
@@ -329,7 +344,10 @@ else:
 print(f"합류 판단: {merge_action}")
 print(f"목표 속도: {target_speed}km/h")
 print(f"남은 합류 거리: {remaining_merge_distance}m")
+	</pre>
 
+ 
+<pre>
 8. 교차로 좌회전 안전성 판단
 # 교차로 좌회전 상황
 oncoming_vehicle_distance = 45   # 미터
@@ -373,7 +391,10 @@ else:
 print(f"좌회전 판단: {turn_decision}")
 print(f"행동: {action}")
 print(f"대향차량 도달시간: {oncoming_arrival_time:.1f}초")
+	</pre>
 
+ 
+<pre>
 9. 차량 오작동 감지 및 안전 모드 전환
 # 차량 시스템 상태 모니터링
 steering_response = 0.8      # 조향 응답성 (0.0-1.0)
@@ -416,7 +437,10 @@ else:
 print(f"안전 모드: {safety_mode}")
 print(f"최대 허용 속도: {max_speed}km/h")
 print(f"경고 수준: {warning_level}")
+	</pre>
 
+ 
+<pre>
 10. 스쿨존 및 특수 구역 감지 대응
 # GPS 및 도로 표지판 인식 데이터
 current_zone = "school_zone"     # school_zone, hospital_zone, construction, normal
@@ -476,32 +500,36 @@ print(f"속도 조치: {speed_action} (목표: {target_speed}km/h)")
 # 추가 안전 조치
 if extra_caution:
     print("추가 조치: 전방 주시 강화, 비상등 점멸 고려")
+	    </pre>
 
 
-🔍 자율주행 If문의 특징
-1. 실시간 센서 데이터 처리
+### 🔍 자율주행 If문의 특징
+#### 1. 실시간 센서 데이터 처리
 라이다, 카메라, 레이더, GPS 등 다중 센서 정보 융합
 거리, 속도, 각도 등 정밀한 수치 계산
-2. 안전 우선 논리
+#### 2. 안전 우선 논리
 불확실한 상황에서는 항상 보수적 판단
 다중 안전장치 및 페일세이프 메커니즘
-3. 상황별 세분화된 판단
+#### 3. 상황별 세분화된 판단
 날씨, 시간, 도로 조건 등 환경 요소 고려
 법규 준수 및 교통 상황 적응
-4. 예측 기반 의사결정
+#### 4. 예측 기반 의사결정
 시간 계산을 통한 충돌 예방
 다른 교통 참여자 행동 예측
 이러한 if문들은 실제 자율주행 시스템의 핵심 의사결정 로직을 보여줍니다!
 
 
 
-함수 관련
-매개변수 기본값 주의
+### 함수 관련
+#### 매개변수 기본값 주의
+<pre>
 # 위험한 코드
 def add_item(item, my_list=[]):
     my_list.append(item)
     return my_list
-
+	</pre>
+ 
+<pre>
 # 문제: 기본값이 공유됨
 list1 = add_item("apple")
 list2 = add_item("banana")
@@ -513,9 +541,11 @@ def add_item(item, my_list=None):
         my_list = []
     my_list.append(item)
     return my_list
+	</pre>
 
-예외 처리
-예외 처리 습관화
+#### 예외 처리
+**예외 처리 습관화**
+<pre>
 # 위험한 코드
 number = int(input("숫자 입력: "))  # 문자 입력 시 에러!
 
@@ -528,9 +558,11 @@ except ValueError:
     print("숫자를 입력해주세요")
 except ZeroDivisionError:
     print("0으로 나눌 수 없습니다")
+	</pre>
 
-파일 처리
-파일 닫기 잊지 말기
+#### 파일 처리
+**파일 닫기 잊지 말기**
+<pre>
 # 위험한 코드
 file = open("data.txt", "r")
 data = file.read()
@@ -540,9 +572,11 @@ data = file.read()
 with open("data.txt", "r") as file:
     data = file.read()
 # 자동으로 파일이 닫힘
-
-성능 관련
-문자열 연결 최적화
+</pre>
+	
+#### 성능 관련
+**문자열 연결 최적화**
+<pre>
 # 비효율적
 result = ""
 for i in range(1000):
@@ -550,22 +584,29 @@ for i in range(1000):
 
 # 효율적
 result = "".join(str(i) for i in range(1000))
+	</pre>
 
-일반적인 실수들
-print문에서 괄호 빠뜨리기
+#### 일반적인 실수들
+**print문에서 괄호 빠뜨리기**
+
+<pre>
 # Python 2 스타일 (에러!)
 print "Hello"
 
 # Python 3 스타일 (올바름)
 print("Hello")
+	</pre>
 
-들여쓰기 혼용
+**들여쓰기 혼용**
+<pre>
 # 에러 발생하는 코드
 if True:
     print("Hello")  # 스페이스 4개
 	print("World")  # 탭 문자 - 에러!
+	</pre>
 
-전역변수 사용 주의
+**전역변수 사용 주의**
+<pre>
 count = 0
 
 def increment():
@@ -574,5 +615,6 @@ def increment():
 
 def increment_wrong():
     count += 1  # 에러! 지역변수로 인식
+	</pre>
 
-이런 점들을 주의하면서 코딩하면 Python을 더 안전하고 효율적으로 사용할 수 있어요!
+**이런 점들을 주의하면서 코딩하면 Python을 더 안전하고 효율적으로 사용할 수 있어요!**
