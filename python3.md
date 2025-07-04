@@ -8,7 +8,6 @@
 <img width="593" alt="스크린샷 2025-06-25 09 15 11" src="https://github.com/user-attachments/assets/9cbf8641-b651-435e-86e8-6b40e4930206" />
 
 
-
 #### 대소문자 구분
 - Python은 대소문자를 구분합니다
 - Print와 print는 완전히 다른 것
@@ -22,23 +21,22 @@
 - 숫자로 시작할 수 없음
 - 특수문자 사용 불가 (밑줄 _ 제외)
 - 예약어 사용 불가
-- 
+
 | #잘못된 변수명 | #올바른 변수명 |
 |--------------|------------|
-| 2name = "John"     # 숫자로 시작| my-name2 "John"   # 하이픈 사용|
-class = "A"        # 예약어 사용
-name2 = "John"
-my_name = "John"
-class_name = "A"
+| 2name = "John"   # 숫자로 시작 | name2 "John" |
+| my-name = "John"  # 하이픈 사용 | my_name = "John"|
+| class = "A"      # 예약어 사용 | class_name = "A" |
 
 
-문자열 처리 주의사항
-# 따옴표 주의
-# 잘못된 경우
-# 올바른 경우
-text = "She said "Hello""  # 에러!
-text = "She said \"Hello\""  # 올바름
-text = 'She said "Hello"'   # 올바름
+
+#### 문자열 처리 주의사항
+**따옴표 주의**
+| #잘못된 경우 | #올바른 경우 |
+|--------------|------------|
+| text = "She said "Hello""  # 에러! | text = "She said \"Hello\""  # 올바름 text = 'She said "Hello"'   # 올바름 |
+
+
 
 
 
