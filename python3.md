@@ -1,4 +1,5 @@
-## Python에서 주의해야 할 점들
+## ❗️ Python에서 주의해야 할 점들
+https://docs.google.com/document/d/19VkSDEzg3EgwLROp6Z0-3Bdayx0T_X4vmB3hQZFbOxY/edit?tab=t.0#heading=h.xznvs0glpxkj
 ### 문법 관련 주의사항
 #### 들여쓰기 (Indentation)
 - Python은 들여쓰기로 코드 블록을 구분합니다
