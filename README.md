@@ -151,7 +151,7 @@ GitHub에서는 `README.md` 파일을 통해 마크다운을 많이 사용합니
 3. **실행** 하면 결과가 아래에 나옴
 
 
-### ⚠️7.**중요한 부분**
+### ⚠️7. **중요한 부분**
 <img width="955" alt="스크린샷 2025-07-04 13 34 15" src="https://github.com/user-attachments/assets/b8e9a421-e07e-4f7b-baa9-9dcac453e41c" />
 
 
