@@ -42,31 +42,39 @@
 my_list = [1, 2, 3]
 print(my_list[3])  # 에러! 인덱스 범위 초과
 print(my_list[2])  # 올바름 (마지막 요소)
-print(my_list[-1]) # 올바름 (뒤에서 첫 번째) </pre>
+print(my_list[-1]) # 올바름 (뒤에서 첫 번째) 
+</pre>
 
 #### 리스트 복사 주의
 <pre> 
 list1 = [1, 2, 3]
 list2 = list1        # 참조 복사 (같은 메모리)
 list2.append(4)
-print(list1)         # [1, 2, 3, 4] - 원본도 변경됨!  </pre>
+print(list1)         # [1, 2, 3, 4] - 원본도 변경됨!  
+</pre>
 
 #### 올바른 복사 방법
+<pre>
 list2 = list1.copy()  # 또는 list1[:]
+</pre>
 
 ### 반복문과 조건문 
 
 #### 무한 루프 주의
 
-- 위험한 코드
+#### 위험한 코드
+<pre>
  while True:
     print("무한 루프!")  # Ctrl+C로 중단해야 함
+    </pre>
 
-- 안전한 코드
+#### 안전한 코드
+<pre>
   count = 0
   while count < 10:
     print(f"카운트: {count}")
     count += 1  # 카운터 증가 잊지 말기!
+	  </pre>
 
 조건문에서 할당 연산자 실수
 x = 5
