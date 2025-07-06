@@ -80,7 +80,7 @@ NumPy의 핵심 객체는 ndarray로, 동일한 데이터 타입을 갖는 원�
 - 배열의 복사본과 뷰의 주요 차이점은 복사본은 **새로운 배열**이고, 뷰는 단지 **원본 배열**의 뷰라는 점입니다.
 - 복사본은 **데이터를 소유**하며 복사본에 적용된 변경 사항은 원본 배열에 영향을 미치지 않고 원본 배열에 적용된 변경 사항은 복사본에 영향을 미치지 않습니다.
 - 뷰는 **데이터를 소유하지 않으며** , 뷰에 적용된 모든 변경 사항은 원래 배열에 영향을 미치고, 원래 배열에 적용된 모든 변경 사항은 뷰에 영향을 미칩니다.
-- [The Difference Between Copy and View](./The_Difference_Between_Copy_and_View.ipynb) **<- 실습**
+- [The Difference Between Copy and View](.NumPy/The_Difference_Between_Copy_and_View.ipynb) **<- 실습**
 
 ## 6. NumPy의 여러 배열에 대해서
 - [Numpy의 여러 배열](./NumPy의_여러_배열.ipynb) **<- 실습**
