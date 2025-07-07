@@ -18,7 +18,8 @@
 
 
 ### 4. OpenCV 주요 모듈
-<img width="740" alt="스크린샷 2025-07-07 10 27 31" src="https://github.com/user-attachments/assets/f36b6db6-c47d-4c42-acc8-1fc977225d55" />
+<img width="749" alt="스크린샷 2025-07-07 10 47 28" src="https://github.com/user-attachments/assets/ef1df974-c867-47bd-adf6-bc060fb06fc7" />
+
 
 
 ### 5. 필수 라이브러리
