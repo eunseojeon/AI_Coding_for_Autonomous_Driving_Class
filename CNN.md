@@ -43,6 +43,8 @@
 
 <img width="1604" height="808" alt="스크린샷 2025-07-14 10 33 05" src="https://github.com/user-attachments/assets/f2809c76-4cb6-4591-9294-a1d7ae2b5454" />
 
+---
+
 ✅ **블러(Blur Detection)처리**
 
 <img width="1604" height="808" alt="스크린샷 2025-07-14 10 38 08" src="https://github.com/user-attachments/assets/3acaaa77-6a71-44cf-b5c1-d694a8288de3" />
