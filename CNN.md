@@ -16,6 +16,10 @@
 - **풀링 계층**(Pooling Layer): 특징 맵의 크기를 줄이고, 중요한 정보만 추려내어 연산량을 감소시킵니다. 대표적으로 최대 풀링(max pooling)이 사용됩니다.
 - **완전 연결 계층**(Fully Connected Layer): 마지막에 위치하며, 추출된 특징을 바탕으로 최종 분류 작업을 수행합니다.
 
+### CNN의 전체적인 네트워크 구조
+
+<img width="640" height="229" alt="image (1)" src="https://github.com/user-attachments/assets/93a051a6-8655-44d0-a6d4-9ff22e37f067" />
+
 
 ### 특징 및 장점
 - 공간 정보 보존: 이미지의 구조적, 지역적 정보를 유지하며 학습합니다.
