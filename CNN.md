@@ -5,14 +5,15 @@
 
 <img width="705" height="287" alt="image" src="https://github.com/user-attachments/assets/a017bec9-5fcf-4a44-b0a6-a77571c1506e" />
 
+---
 ### 관련 애니메이션
 - https://claude.ai/public/artifacts/2cebc728-66b5-414a-9e97-991f60a2a7e1
 - https://claude.ai/public/artifacts/2c09bc56-7cc3-4ea0-b3ca-7678aa107756
-
+---
 ### 등장 배경
 - 기존의 인공신경망(특히 다층 퍼셉트론, MLP)은 이미지를 1차원 벡터로 변환해 처리해야 했기 때문에, 이미지의 공간 구조와 지역적 정보가 손실되는 한계가 있었습니다.
 - CNN은 이러한 문제를 해결하기 위해 고안되었으며, 이미지의 2차원 구조를 그대로 입력받아 공간 정보를 보존하면서 학습할 수 있습니다.
-
+---
 ### 주요 구조와 동작 원리
 1️⃣ **합성곱 계층**(Convolutional Layer): 입력 데이터에 여러 개의 필터(커널)를 적용해 **특징 맵**(feature map)을 생성합니다. 각 필터는 이미지의 특정 패턴(예: 모서리, 색상 변화 등)을 감지하도록 학습됩니다.
 
@@ -48,7 +49,7 @@
 
 
 
-
+---
 2️⃣ **활성화 함수**(ReLU 등): 비선형성을 부여해 신경망이 복잡한 패턴을 학습할 수 있도록 합니다. 대표적으로 ReLU(Rectified Linear Unit)가 사용됩니다.
 
 <img width="822" height="362" alt="스크린샷 2025-07-14 09 26 07" src="https://github.com/user-attachments/assets/613ca701-82e5-406a-9d9e-54fef3ca71b9" />
