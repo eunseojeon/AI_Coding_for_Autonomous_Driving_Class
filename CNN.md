@@ -18,6 +18,10 @@
 
 - **활성화 함수**(ReLU 등): 비선형성을 부여해 신경망이 복잡한 패턴을 학습할 수 있도록 합니다. 대표적으로 ReLU(Rectified Linear Unit)가 사용됩니다.
 - **풀링 계층**(Pooling Layer): 특징 맵의 크기를 줄이고, 중요한 정보만 추려내어 연산량을 감소시킵니다. 대표적으로 최대 풀링(max pooling)이 사용됩니다.
+
+<img width="1280" height="497" alt="다운로드" src="https://github.com/user-attachments/assets/f72ab12b-ee2a-43dc-8453-e00106c6e7e2" />
+
+
 - **완전 연결 계층**(Fully Connected Layer): 마지막에 위치하며, 추출된 특징을 바탕으로 최종 분류 작업을 수행합니다.
 
 ### CNN의 전체적인 네트워크 구조
