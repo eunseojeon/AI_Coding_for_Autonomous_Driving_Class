@@ -8,7 +8,7 @@
 ---
 ### 관련 애니메이션
 - https://claude.ai/public/artifacts/2cebc728-66b5-414a-9e97-991f60a2a7e1
-- https://claude.ai/public/artifacts/2c09bc56-7cc3-4ea0-b3ca-7678aa107756
+
 ---
 ### 등장 배경
 - 기존의 인공신경망(특히 다층 퍼셉트론, MLP)은 이미지를 1차원 벡터로 변환해 처리해야 했기 때문에, 이미지의 공간 구조와 지역적 정보가 손실되는 한계가 있었습니다.
@@ -20,6 +20,7 @@
 ![img](https://github.com/user-attachments/assets/e481c078-c53a-4535-a3b9-a49c2095f3e1)
 
 ✅ **수평엣지**(Horizontal Edge)와 **수직엣지**(Vertical Edge)
+- https://claude.ai/public/artifacts/2c09bc56-7cc3-4ea0-b3ca-7678aa107756
 - **엣지**란 이미지 내에서 픽셀 값이 급격하게 변하는 경계선을 의미합니다.
 - 수평엣지는 위아래 방향(행)으로 픽셀 값이 급격히 변하는 부분, 수직엣지는 좌우 방향(열)으로 픽셀 값이 급격히 변하는 부분을 말합니다.
 - 수평엣지 검출 커널
