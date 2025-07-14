@@ -17,6 +17,10 @@
 
 
 - **활성화 함수**(ReLU 등): 비선형성을 부여해 신경망이 복잡한 패턴을 학습할 수 있도록 합니다. 대표적으로 ReLU(Rectified Linear Unit)가 사용됩니다.
+
+<img width="822" height="362" alt="스크린샷 2025-07-14 09 26 07" src="https://github.com/user-attachments/assets/613ca701-82e5-406a-9d9e-54fef3ca71b9" />
+
+
 - **풀링 계층**(Pooling Layer): 특징 맵의 크기를 줄이고, 중요한 정보만 추려내어 연산량을 감소시킵니다. 대표적으로 최대 풀링(max pooling)이 사용됩니다.
 
 <img width="1280" height="497" alt="다운로드" src="https://github.com/user-attachments/assets/f72ab12b-ee2a-43dc-8453-e00106c6e7e2" />
