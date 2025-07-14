@@ -3,7 +3,7 @@
 - 딥러닝에서 주로 이미지나 영상 데이터를 처리할 때 사용되는 대표적인 신경망 구조입니다.
 - CNN은 인간의 시각 피질 구조를 모방해 개발되었으며, 이미지의 공간적, 지역적 정보를 효과적으로 학습할 수 있도록 설계되었습니다.
 
-![Uploading image.png…]()
+<img width="705" height="287" alt="image" src="https://github.com/user-attachments/assets/a017bec9-5fcf-4a44-b0a6-a77571c1506e" />
 
 
 ### 등장 배경
