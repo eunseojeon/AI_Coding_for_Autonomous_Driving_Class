@@ -176,12 +176,12 @@ GitHub에서는 `README.md` 파일을 통해 마크다운을 많이 사용합니
 
 ## 5. OpenCV
 
-- [OpenCV Basic](./OpenCV_basic.md)
+- [OpenCV Basic](./OpenCV.md)
 - [이미지 처리](./image_test.md)
 
   
 ## 6. CNN(Convolution Neural Network
-- [CNN_Basic](./CNN_basic.md)
+- [CNN_Basic](./CNN.md)
 - [CNN_자율주행 관련 코드](./cnn_test.md)
 
 ## 7. Ultralytics
