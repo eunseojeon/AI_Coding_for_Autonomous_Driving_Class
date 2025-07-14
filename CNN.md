@@ -30,7 +30,9 @@
    0  0  0
    1  2  1
   ```
-  
+
+<img width="1604" height="808" alt="스크린샷 2025-07-14 10 33 40" src="https://github.com/user-attachments/assets/bb4ad7ff-115f-44e0-8676-bf744880873b" />
+
 - 수직엣지 검출 커널
 
   ```
@@ -38,7 +40,10 @@
   -2  0  2
   -1  0  1
   ```
-  
+
+<img width="1604" height="808" alt="스크린샷 2025-07-14 10 33 05" src="https://github.com/user-attachments/assets/f2809c76-4cb6-4591-9294-a1d7ae2b5454" />
+
+
 - 엣지 검출 과정:
 1. 이미지를 **흑백**(그레이스케일)으로 변환
 2. **노이즈 제거**(필요시)
