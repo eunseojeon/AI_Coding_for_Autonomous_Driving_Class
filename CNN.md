@@ -18,6 +18,10 @@
 
 ![img](https://github.com/user-attachments/assets/e481c078-c53a-4535-a3b9-a49c2095f3e1)
 
+- - 수평엣지(Horizontal Edge)와 수직엣지(Vertical Edge)
+**엣지**란 이미지 내에서 픽셀 값이 급격하게 변하는 경계선을 의미합니다.
+수평엣지는 위아래 방향(행)으로 픽셀 값이 급격히 변하는 부분, 수직엣지는 좌우 방향(열)으로 픽셀 값이 급격히 변하는 부분을 말합니다.
+
 
 - **활성화 함수**(ReLU 등): 비선형성을 부여해 신경망이 복잡한 패턴을 학습할 수 있도록 합니다. 대표적으로 ReLU(Rectified Linear Unit)가 사용됩니다.
 
@@ -34,6 +38,13 @@
 ### CNN의 전체적인 네트워크 구조
 
 <img width="640" height="229" alt="image (1)" src="https://github.com/user-attachments/assets/93a051a6-8655-44d0-a6d4-9ff22e37f067" />
+
+### 최신 연구 동향 및 혁신
+- 전이 학습(Transfer Learning): 대규모 데이터셋에서 미리 학습된 CNN 모델을 새로운 작업에 재활용하는 방식입니다. 데이터가 적은 환경에서도 높은 성능을 낼 수 있어 실제 응용에서 널리 사용됩니다.
+- 경량화 모델: 모바일, IoT 등 자원이 제한된 환경에서도 사용 가능하도록 모델 크기와 연산량을 줄인 EfficientNet, MobileNet 등 경량화 구조가 개발되고 있습니다.
+- GAN(Generative Adversarial Networks)과의 결합: CNN과 GAN을 결합해 이미지 생성, 복원, 스타일 변환 등 창의적인 작업에도 활용되고 있습니다.
+- 해석 가능성(Explainability): CNN의 의사결정 과정을 설명하고 신뢰도를 높이기 위한 연구가 활발히 진행 중입니다.
+- 양자 CNN(QCNN): 양자컴퓨팅의 개념을 접목한 QCNN(Quantum Convolutional Neural Networks)이 등장해, 기존 CNN의 한계를 극복하려는 시도가 이어지고 있습니다.
 
 
 ### 특징 및 장점
