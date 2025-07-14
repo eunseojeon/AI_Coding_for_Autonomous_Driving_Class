@@ -8,7 +8,7 @@
 ---
 ### 관련 애니메이션
 - https://claude.ai/public/artifacts/2cebc728-66b5-414a-9e97-991f60a2a7e1
-
+- https://claude.ai/public/artifacts/a3bda456-4c3f-4127-a921-21ad4c351c98
 ---
 ### 등장 배경
 - 기존의 인공신경망(특히 다층 퍼셉트론, MLP)은 이미지를 1차원 벡터로 변환해 처리해야 했기 때문에, 이미지의 공간 구조와 지역적 정보가 손실되는 한계가 있었습니다.
