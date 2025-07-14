@@ -14,7 +14,7 @@
 - CNN은 이러한 문제를 해결하기 위해 고안되었으며, 이미지의 2차원 구조를 그대로 입력받아 공간 정보를 보존하면서 학습할 수 있습니다.
 
 ### 주요 구조와 동작 원리
-- **합성곱 계층**(Convolutional Layer): 입력 데이터에 여러 개의 필터(커널)를 적용해 **특징 맵**(feature map)을 생성합니다. 각 필터는 이미지의 특정 패턴(예: 모서리, 색상 변화 등)을 감지하도록 학습됩니다.
+1️⃣ **합성곱 계층**(Convolutional Layer): 입력 데이터에 여러 개의 필터(커널)를 적용해 **특징 맵**(feature map)을 생성합니다. 각 필터는 이미지의 특정 패턴(예: 모서리, 색상 변화 등)을 감지하도록 학습됩니다.
 
 ![img](https://github.com/user-attachments/assets/e481c078-c53a-4535-a3b9-a49c2095f3e1)
 
@@ -33,21 +33,33 @@
   -2  0  2
   -1  0  1
   '''
-  
+- 엣지 검출 과정:
+1. 이미지를 흑백(그레이스케일)으로 변환
+2. 노이즈 제거(필요시)
+3. 수평/수직 마스크를 각각 적용하여 해당 방향의 엣지 검출
+4. 두 결과를 합성하여 전체 엣지(경계선) 추출
+- 활용 분야:
+1. 객체 인식 및 분할
+2. 윤곽선 추출
+3. 영상 내 구조 분석
+4. 자율주행, 의료 영상 분석 등
+
+<img width="731" height="130" alt="스크린샷 2025-07-14 10 20 31" src="https://github.com/user-attachments/assets/35d414b3-54b2-4d3d-b101-cfb29faef73b" />
 
 
 
-- **활성화 함수**(ReLU 등): 비선형성을 부여해 신경망이 복잡한 패턴을 학습할 수 있도록 합니다. 대표적으로 ReLU(Rectified Linear Unit)가 사용됩니다.
+
+2️⃣ **활성화 함수**(ReLU 등): 비선형성을 부여해 신경망이 복잡한 패턴을 학습할 수 있도록 합니다. 대표적으로 ReLU(Rectified Linear Unit)가 사용됩니다.
 
 <img width="822" height="362" alt="스크린샷 2025-07-14 09 26 07" src="https://github.com/user-attachments/assets/613ca701-82e5-406a-9d9e-54fef3ca71b9" />
 
 
-- **풀링 계층**(Pooling Layer): 특징 맵의 크기를 줄이고, 중요한 정보만 추려내어 연산량을 감소시킵니다. 대표적으로 최대 풀링(max pooling)이 사용됩니다.
+3️⃣ **풀링 계층**(Pooling Layer): 특징 맵의 크기를 줄이고, 중요한 정보만 추려내어 연산량을 감소시킵니다. 대표적으로 최대 풀링(max pooling)이 사용됩니다.
 
 <img width="1280" height="497" alt="다운로드" src="https://github.com/user-attachments/assets/f72ab12b-ee2a-43dc-8453-e00106c6e7e2" />
 
 
-- **완전 연결 계층**(Fully Connected Layer): 마지막에 위치하며, 추출된 특징을 바탕으로 최종 분류 작업을 수행합니다.
+4️⃣ **완전 연결 계층**(Fully Connected Layer): 마지막에 위치하며, 추출된 특징을 바탕으로 최종 분류 작업을 수행합니다.
 
 ### CNN의 전체적인 네트워크 구조
 
