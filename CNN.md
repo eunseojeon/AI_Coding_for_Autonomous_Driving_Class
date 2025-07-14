@@ -17,7 +17,7 @@
 ## 주요 구조와 동작 원리
 1️⃣ **합성곱 계층**(Convolutional Layer): 입력 데이터에 여러 개의 필터(커널)를 적용해 **특징 맵**(feature map)을 생성합니다. 각 필터는 이미지의 특정 패턴(예: 모서리, 색상 변화 등)을 감지하도록 학습됩니다.
 
-![img](https://github.com/user-attachments/assets/e481c078-c53a-4535-a3b9-a49c2095f3e1)
+![img](https://github.com/user-attachments/assets/e481c078-c53a-4535-a3b9-a49c2095f3e1) <- 관련 애니메이션
 
 ✅ **수평엣지**(Horizontal Edge)와 **수직엣지**(Vertical Edge)
 - https://claude.ai/public/artifacts/2c09bc56-7cc3-4ea0-b3ca-7678aa107756
