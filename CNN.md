@@ -5,6 +5,9 @@
 
 <img width="705" height="287" alt="image" src="https://github.com/user-attachments/assets/a017bec9-5fcf-4a44-b0a6-a77571c1506e" />
 
+**CNN용어 설명**
+https://docs.google.com/document/d/1Np73nrbqW8hE7hS-2t1sqhM_OFPvciHb35YqMK60ceo/edit?tab=t.0
+
 ---
 ### 관련 애니메이션
 - https://claude.ai/public/artifacts/2cebc728-66b5-414a-9e97-991f60a2a7e1
