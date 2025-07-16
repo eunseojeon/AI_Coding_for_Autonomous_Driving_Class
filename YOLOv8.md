@@ -17,20 +17,6 @@
 - **다양한 크기 모델 지원**: YOLOv8은 ultra-tiny부터 large, extra-large까지 다양한 크기와 성능의 모델을 제공합니다. 사용자는 자신의 상황(모바일, PC, 서버)에 맞게 모델을 선택할 수 있습니다[3][6].
 - **학습 및 배포의 용이성**: 유연한 Python 기반 구조와 풍부한 오픈소스 리소스로 누구나 쉽게 모델을 학습시키고 실제 서비스에 배포할 수 있습니다[1][2].
 
-### ✅ YOLOv8의 상세 기술 구조
-1. **입력과 전처리**(Input & Preprocessing)
-- 이미지는 Tensor 형태(NCHW)로 변환됩니다.
-- 크기 조정(Resize), 정규화(Normalization), 데이터 증강(Augmentation) 적용
-2. **백본**(Backbone)
-- Feature Map을 추출하는 핵심 신경망(예: CSPDarknet, EfficientNet 등)
-- 입력 이미지에서 객체의 다양한 특징(Edge, Color, Texture)을 계층별로 뽑아냅니다.
-3. **넥**(Neck)
-- Feature Pyramid Network(FPN), PANet 등 구조로 여러 해상도의 정보 융합
-- 대, 중, 소 객체 모두 잘 탐지할 수 있도록 중요한 역할 수행
-4. **헤드**(Head)
-- 앵커-프리(anchor-free) 구조: 박스 예측을 위한 하이퍼파라미터 최소화
-- 네트워크 마지막에서 각 위치마다 객체의 종류(Class), 위치(Bounding Box), **신뢰도(Confidence Score)**를 바로 출력
-
 
 ### ✅ YOLOv8의 주요 특징과 개선점
 1. **앵커 프리(anchor-free) 구조**
@@ -68,6 +54,21 @@ model.train(data='dataset.yaml', epochs=50)
 
 - model('이미지경로') 형태로 매우 간단하게 추론 가능
 - 학습 진행시 커스텀 데이터셋에 맞춰 yaml 설정 파일 작성 필요
+
+### ✅ YOLOv8의 상세 기술 구조
+1. **입력과 전처리**(Input & Preprocessing)
+- 이미지는 Tensor 형태(NCHW)로 변환됩니다.
+- 크기 조정(Resize), 정규화(Normalization), 데이터 증강(Augmentation) 적용
+2. **백본**(Backbone)
+- Feature Map을 추출하는 핵심 신경망(예: CSPDarknet, EfficientNet 등)
+- 입력 이미지에서 객체의 다양한 특징(Edge, Color, Texture)을 계층별로 뽑아냅니다.
+3. **넥**(Neck)
+- Feature Pyramid Network(FPN), PANet 등 구조로 여러 해상도의 정보 융합
+- 대, 중, 소 객체 모두 잘 탐지할 수 있도록 중요한 역할 수행
+4. **헤드**(Head)
+- 앵커-프리(anchor-free) 구조: 박스 예측을 위한 하이퍼파라미터 최소화
+- 네트워크 마지막에서 각 위치마다 객체의 종류(Class), 위치(Bounding Box), **신뢰도(Confidence Score)**를 바로 출력
+
 
 ### ✅ 기술적 구조 요약
 
