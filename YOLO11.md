@@ -23,7 +23,7 @@ https://www.youtube.com/watch?v=-JXwa-WlkU8
 |-----|-------|------|
 | YOLO11 |	`yolo11n.pt` `yolo11s.pt` `yolo11m.pt` `yolo11l.pt` `yolo11x.pt` |	[탐지](https://docs.ultralytics.com/ko/tasks/detect/) |	
 | YOLO11-seg |	`yolo11n-seg.pt` `yolo11s-seg.pt` `yolo11m-seg.pt` `yolo11l-seg.pt` `yolo11x-seg.pt` |	[인스턴스 세분화](https://docs.ultralytics.com/ko/tasks/segment/) |	
-| YOLO11-pose |	`yolo11n-pose.pt` `yolo11s-pose.pt` `yolo11m-pose.pt` `yolo11l-pose.pt` `yolo11x-pose.pt`	|[포즈/키포인트(https://docs.ultralytics.com/ko/tasks/pose/) |	
+| YOLO11-pose |	`yolo11n-pose.pt` `yolo11s-pose.pt` `yolo11m-pose.pt` `yolo11l-pose.pt` `yolo11x-pose.pt`	|[포즈/키포인트](https://docs.ultralytics.com/ko/tasks/pose/) |	
 | YOLO11-obb |	`yolo11n-obb.pt` `yolo11s-obb.pt` `yolo11m-obb.pt` `yolo11l-obb.pt` `yolo11x-obb.pt` |	[방향 탐지](https://docs.ultralytics.com/ko/tasks/obb/)	|
 | YOLO11-cls |	`yolo11n-cls.pt` `yolo11s-cls.pt` `yolo11m-cls.pt` `yolo11l-cls.pt` `yolo11x-cls.pt` |	[분류](https://docs.ultralytics.com/ko/tasks/classify/) |
 
