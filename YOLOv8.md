@@ -25,7 +25,7 @@ https://www.youtube.com/watch?v=Na0HvJ4hkk0&t=7s
 
 | 모델 | 파일 이름 | 작업 |
 |---|-----|----|
-|YOLOv8 | yolov8n.pt yolov8s.pt yolov8m.pt yolov8l.pt yolov8x.pt | [탐지](https://docs.ultralytics.com/ko/tasks/detect/) | 
+|YOLOv8 | `yolov8n.pt` `yolov8s.pt` `yolov8m.pt` `yolov8l.pt` `yolov8x.pt` | [탐지](https://docs.ultralytics.com/ko/tasks/detect/) | 
 
 
 
