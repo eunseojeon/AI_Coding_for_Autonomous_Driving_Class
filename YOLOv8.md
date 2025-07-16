@@ -59,21 +59,6 @@ https://www.youtube.com/watch?v=Na0HvJ4hkk0&t=7s
 - **다양한 크기 모델 지원**: YOLOv8은 ultra-tiny부터 large, extra-large까지 다양한 크기와 성능의 모델을 제공합니다. 사용자는 자신의 상황(모바일, PC, 서버)에 맞게 모델을 선택할 수 있습니다
 - **학습 및 배포의 용이성**: 유연한 Python 기반 구조와 풍부한 오픈소스 리소스로 누구나 쉽게 모델을 학습시키고 실제 서비스에 배포할 수 있습니다
 
-
-### ✅ YOLOv8의 주요 특징과 개선점
-1. **앵커 프리(anchor-free) 구조**
-- YOLOv8은 기존 앵커 기반(object의 가능한 위치와 크기를 미리 지정) 방식을 벗어나, 모델이 직접 위치와 크기를 자유롭게 예측합니다.
-- Hyper-parameter 튜닝이 크게 줄고, 다양한 비율/크기의 객체에도 강합니다.
-2. **다중 작업(Multi-task) 지원**
-- 객체 탐지(Object Detection)
-- 분할(Segmentation)
-- 이미지 분류(Classification)
-- 키포인트 검출(Keypoint Detection)
-3. **다양한 모델 사이즈**
-- nano, small, medium, large, xlarge 등 용도 및 하드웨어 상황에 맞게 선택 가능
-4. **프레임워크와 호환성**
-- PyTorch 기반으로 작성되어, 학습/테스트/배포 위주로 다양한 상황에 적용
-
 ### ✅ 실제 코드 예시
 ```
 # Ultralytics YOLOv8 공식 패키지 설치
@@ -116,6 +101,19 @@ results = model.train(data="coco8.yaml", epochs=100, imgsz=640)
 results = model("path/to/bus.jpg")
 ```
 
+- YOLOv8 모델 또는 이 리포지토리의 다른 소프트웨어를 작업에 사용하는 경우 다음 형식을 사용하여 인용해 주세요:
+```
+@software{yolov8_ultralytics,
+  author = {Glenn Jocher and Ayush Chaurasia and Jing Qiu},
+  title = {Ultralytics YOLOv8},
+  version = {8.0.0},
+  year = {2023},
+  url = {https://github.com/ultralytics/ultralytics},
+  orcid = {0000-0001-5950-6979, 0000-0002-7603-6750, 0000-0003-3783-7069},
+  license = {AGPL-3.0}
+}
+```
+
 ### ✅ YOLOv8의 상세 기술 구조
 1. **입력과 전처리**(Input & Preprocessing)
 - 이미지는 Tensor 형태(NCHW)로 변환됩니다.
@@ -141,7 +139,7 @@ results = model("path/to/bus.jpg")
 | 최적화(Optimization) | 데이터 증강, 개선된 손실 함수, 비지도 학습 등 최신 기술 적용 |
 
 
-6. 대표적 성능 지표
+### ✅ 대표적 성능 지표
 - **MAP**(mean Average Precision): 객체 탐지 모델의 대표적 평가 지표
 - **FPS**(Frame per Second): 1초에 처리 가능한 이미지 수
 - **탐지 클래스 수**: 탐지 가능한 개체 종류 수 (COCO 등 데이터셋 사용 시 약 80개)
@@ -153,7 +151,30 @@ results = model("path/to/bus.jpg")
 
 ※ 실제 결과는 하드웨어, 데이터에 따라 달라질 수 있다.
 
-## ✅ 활용 사례 및 응용 분야
+### ✅ YOLOv8 모델을 어떻게 교육하나요?
+- YOLOv8 모델 훈련은 Python 또는 CLI 을 사용하여 수행할 수 있습니다. 
+- 다음은 10개의 에포크에 대한 COCO8 데이터 세트에서 COCO가 사전 훈련한 YOLOv8 모델을 사용하여 모델을 훈련하는 예제입니다:
+```
+from ultralytics import YOLO
+
+# Load a COCO-pretrained YOLOv8n model
+model = YOLO("yolov8n.pt")
+
+# Train the model on the COCO8 example dataset for 100 epochs
+results = model.train(data="coco8.yaml", epochs=100, imgsz=640)
+```
+
+### ✅ YOLOv8 모델을 벤치마킹하여 성능을 확인할 수 있나요?
+- 예, YOLOv8 모델은 다양한 내보내기 형식에 걸쳐 속도와 정확도 측면에서 성능을 벤치마킹할 수 있습니다.
+- PyTorch , ONNX, TensorRT 등을 사용하여 벤치마킹할 수 있습니다. 다음은 Python 및 CLI 을 사용하여 벤치마킹하는 예제 명령어입니다:
+```
+from ultralytics.utils.benchmarks import benchmark
+
+# Benchmark on GPU
+benchmark(model="yolov8n.pt", data="coco8.yaml", imgsz=640, half=False, device=0)
+```
+
+### ✅ 활용 사례 및 응용 분야
 
 - **자율주행**: 차량, 보행자, 도로 장애물 등을 실시간으로 탐지하여 경로 계획에 활용
 - **보안 및 감시**: CCTV 장면 내 이상행동, 침입자 실시간 감지
@@ -163,19 +184,19 @@ results = model("path/to/bus.jpg")
 - **스마트 농업**: 작물 건강 상태 감지, 농축산 자동화
 - **증강현실(AR)**: 실시간 객체 인식을 통한 사용자 경험 강화
 
-## ✅ 모델의 장점
+### ✅ 모델의 장점
 
 - 높은 정확도와 실시간 처리 성능 조화
 - 다양한 디바이스(엣지, 서버)에서 손쉽게 적용 가능
 - 코드 오픈소스화 및 커뮤니티 중심의 빠른 기술 발전
 
-## ✅ 한계 및 고려점
+### ✅ 한계 및 고려점
 
 - 대용량 모델은 고성능 하드웨어 필요
 - 완벽한 일반화에는 대규모 데이터셋 학습이 중요
 - 특정 상황(예: 군중 속 미세한 객체)에서는 추가 튜닝 필요
 
-## ✅ 결론
+### ✅ 결론
 
 - YOLOv8은 객체 탐지 알고리즘의 최신 버전으로, 다양한 업무와 산업 전반에 실질적인 변화를 가져오는 실시간 인공지능 비전 기술입니다. 
 - 강력한 처리 성능, 다양한 작업 지원, 실용적인 오픈소스 생태계의 특징을 바탕으로 앞으로도 많은 혁신 사례가 기대되는 모델입니다.
