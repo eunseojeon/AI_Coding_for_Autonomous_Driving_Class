@@ -34,6 +34,9 @@ https://www.youtube.com/watch?v=Na0HvJ4hkk0&t=7s
 - 위 표는 YOLOv8 모델 변형에 대한 개요를 제공하며, 특정 작업에서의 적용 가능성과 추론, 검증, 훈련, 내보내기 등 다양한 작동 모드와의 호환성을 강조합니다.
 - [컴퓨터 비전](https://www.ultralytics.com/glossary/computer-vision-cv)의 다양한 애플리케이션에 적합한 YOLOv8 시리즈의 다목적성과 견고함을 보여줍니다.
 
+<img width="813" height="374" alt="스크린샷 2025-07-16 11 55 47" src="https://github.com/user-attachments/assets/ebd47694-c2e9-4b48-8136-ab282b345645" />
+
+
 ### ✅ YOLO 알고리즘의 발전 배경
 - YOLO 시리즈는 2015년 처음 등장한 이후, 빠른 속도와 높은 정확도를 바탕으로 객체 탐지 분야의 표준으로 자리매김해 왔습니다.
 - 각 버전에서 주요 기능과 성능 면의 진보가 이루어졌으며, YOLOv8은 이러한 발전을 집대성해 최신 기술과 실용성을 결합하고 있습니다.
