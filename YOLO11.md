@@ -1,7 +1,7 @@
 # 📝 YOLO11이란 ?
+- https://docs.ultralytics.com/ko/models/yolo11/#key-features
 - YOLO11 실시간 물체 감지기의 최신 버전인 Ultralytics YOLO 시리즈의 최신 버전으로, 최첨단 정확도, 속도, 효율성으로 가능성의 한계를 재정의합니다.
 - 이전 버전( YOLO )의 인상적인 발전을 바탕으로 아키텍처와 훈련 방법이 크게 개선되어 다양한 컴퓨터 비전 작업에 다용도로 사용할 수 있는 YOLO11 버전이 출시되었습니다.
-- https://docs.ultralytics.com/ko/models/yolo11/#key-features
 
 <img width="3840" height="1680" alt="image" src="https://github.com/user-attachments/assets/79530c8c-1d09-479c-937d-30a63c735f32" />
 
