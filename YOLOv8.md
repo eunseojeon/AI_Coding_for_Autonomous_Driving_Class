@@ -36,6 +36,16 @@ https://www.youtube.com/watch?v=Na0HvJ4hkk0&t=7s
 
 <img width="813" height="374" alt="스크린샷 2025-07-16 11 55 47" src="https://github.com/user-attachments/assets/ebd47694-c2e9-4b48-8136-ab282b345645" />
 
+### ✅ 성능
+#### 📝 탐지
+| 모델 |	크기 (픽셀) |	mAPval 50-95 |	속도CPU ONNX(ms)	| 속도 A100 TensorRT(ms) |	매개변수(M) |	FLOPs(B)|
+|-----|-------|-----|------|-------|------|-----|
+| YOLOv8n |	640 |	37.3 |	80.4 |	0.99 |	3.2 |	8.7 |
+| YOLOv8s |	640 |	44.9 |	128.4 |	1.20 |	11.2 |	28.6 |
+| YOLOv8m |	640 |	50.2 |	234.7 |	1.83 |	25.9 |	78.9 |
+| YOLOv8l |	640 |	52.9 |	375.2 |	2.39 |	43.7 |	165.2 |
+| YOLOv8x |	640 |	53.9 |	479.1 |	3.53 |	68.2 |	257.8 |
+
 
 ### ✅ YOLO 알고리즘의 발전 배경
 - YOLO 시리즈는 2015년 처음 등장한 이후, 빠른 속도와 높은 정확도를 바탕으로 객체 탐지 분야의 표준으로 자리매김해 왔습니다.
@@ -86,6 +96,25 @@ model.train(data='dataset.yaml', epochs=50)
 
 - model('이미지경로') 형태로 매우 간단하게 추론 가능
 - 학습 진행시 커스텀 데이터셋에 맞춰 yaml 설정 파일 작성 필요
+
+### ✅ YOLOv8 사용 예시
+- 아래 예는 YOLOv8 객체 감지를 위한 모델감지용 예제입니다.
+- PyTorch 사전 교육 `*.pt` 모델 및 구성 `*.yaml` 파일을 `YOLO()` 클래스를 사용하여 python 에서 모델 인스턴스를 생성합니다:
+```
+from ultralytics import YOLO
+
+# Load a COCO-pretrained YOLOv8n model
+model = YOLO("yolov8n.pt")
+
+# Display model information (optional)
+model.info()
+
+# Train the model on the COCO8 example dataset for 100 epochs
+results = model.train(data="coco8.yaml", epochs=100, imgsz=640)
+
+# Run inference with the YOLOv8n model on the 'bus.jpg' image
+results = model("path/to/bus.jpg")
+```
 
 ### ✅ YOLOv8의 상세 기술 구조
 1. **입력과 전처리**(Input & Preprocessing)
