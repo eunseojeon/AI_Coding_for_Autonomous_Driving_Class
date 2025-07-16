@@ -1,4 +1,4 @@
-# YOLOv8 (You Only Look Once Version 8)
+# 🧠 YOLOv8 (You Only Look Once Version 8)
 
 ### ✅ YOLOv8이란?
 - **실시간 객체 탐지 분야**에서 최신 기술을 선도하는 **딥러닝 기반**의 비전 모델
