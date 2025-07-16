@@ -7,6 +7,9 @@
 
 <img width="1920" height="720" alt="image" src="https://github.com/user-attachments/assets/00ac0338-8b61-4ff7-bc92-66e4699acb14" />
 
+#### 💻 YOLOv8 간략 설명 
+https://www.youtube.com/watch?v=Na0HvJ4hkk0&t=7s
+
 
 ### ✅ YOLO 알고리즘의 발전 배경
 - YOLO 시리즈는 2015년 처음 등장한 이후, 빠른 속도와 높은 정확도를 바탕으로 객체 탐지 분야의 표준으로 자리매김해 왔습니다.
