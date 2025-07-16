@@ -26,8 +26,10 @@ https://www.youtube.com/watch?v=Na0HvJ4hkk0&t=7s
 | 모델 | 파일 이름 | 작업 |
 |---|-----|----|
 |YOLOv8 | `yolov8n.pt` `yolov8s.pt` `yolov8m.pt` `yolov8l.pt` `yolov8x.pt` | [탐지](https://docs.ultralytics.com/ko/tasks/detect/) | 
-
-
+| YOLOv8-seg |	`yolov8n-seg.pt` `yolov8s-seg.pt` `yolov8m-seg.pt` `yolov8l-seg.pt` `yolov8x-seg.pt` |	[인스턴스 세분화](https://docs.ultralytics.com/ko/tasks/segment/) |
+| YOLOv8-pose |	`yolov8n-pose.pt` `yolov8s-pose.pt` `yolov8m-pose.pt` `yolov8l-pose.pt` `yolov8x-pose.pt` `yolov8x-pose-p6.pt` |	[포즈/키포인트](https://docs.ultralytics.com/ko/tasks/pose/) |
+| YOLOv8-obb |	`yolov8n-obb.pt` `yolov8s-obb.pt` `yolov8m-obb.pt` `yolov8l-obb.pt` `yolov8x-obb.pt` |	[방향 탐지](https://docs.ultralytics.com/ko/tasks/obb/)|
+| YOLOv8-cls |	`yolov8n-cls.pt` `yolov8s-cls.pt` `yolov8m-cls.pt` `yolov8l-cls.pt` `yolov8x-cls.pt` |	[분류](https://docs.ultralytics.com/ko/tasks/classify/) |
 
 ### ✅ YOLO 알고리즘의 발전 배경
 - YOLO 시리즈는 2015년 처음 등장한 이후, 빠른 속도와 높은 정확도를 바탕으로 객체 탐지 분야의 표준으로 자리매김해 왔습니다.
