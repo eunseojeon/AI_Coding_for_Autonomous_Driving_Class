@@ -185,9 +185,9 @@ GitHub에서는 `README.md` 파일을 통해 마크다운을 많이 사용합니
 - [CNN_자율주행 관련 코드](./cnn_test.md)
 
 ## 7. Ultralytics
-- [Ultralytics_Basic](./YOLOv8.md)
-- [Ultralytics_Basic](Ultralytics_v11.md)
-- [Ultralytics_Basic](Ultralytics_v12.md)
+- [Ultralytics_YOLOv8_Basic](./YOLOv8.md)
+- [Ultralytics_YOLO11_Basic](./YOLO11.md)
+- [Ultralytics_YOLO12_Basic](Ultralytics_v12.md)
   
 ## 8. TensorRT vs PyTorch 
 - [PyTorch_Basic](./PyTorch_basic.md)
