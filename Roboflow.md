@@ -23,7 +23,8 @@
 
 ### 3. 이미지 업로드 및 라벨링
 
-<img width="1254" height="857" alt="스크린샷 2025-07-24 09 44 47" src="https://github.com/user-attachments/assets/1576af84-7162-455f-aa6d-dda75c60c7b3" />
+<img width="1705" height="947" alt="스크린샷 2025-07-25 00 30 18" src="https://github.com/user-attachments/assets/259e3f18-b151-4e8c-9d01-1335aee7768c" />
+
 
 - **Upload** 메뉴에서 데이터를 업로드(드래그&드롭, 폴더 선택 등)
 - **몇 초마다 프레임**을 설정할 건지 정하기 (나같은 경우, 26분짜리 영상을 2초마다 설정하니 500장 정도의 사진이 나옴)
