@@ -37,7 +37,7 @@
 <img width="1254" height="857" alt="스크린샷 2025-07-24 09 49 49" src="https://github.com/user-attachments/assets/6e147acb-004b-4739-84b8-7760827c9684" />
 
 2. 객체마다 Classes 지정해주기 (ex. traffic_sign, speed, lane, guardrail 등)
-3. 남아있는 사진 전부 다 디정해주면 됨
+3. 남아있는 사진 전부 다 지정해주면 됨
 
 ### 4. 데이터셋 분할 및 버전 생성
 
