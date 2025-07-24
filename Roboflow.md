@@ -47,10 +47,15 @@
 
 ### 5. 데이터셋 다운로드/API 코드 복사
 
+<img width="1705" height="975" alt="스크린샷 2025-07-25 01 07 37" src="https://github.com/user-attachments/assets/49bb28dc-95df-4a8a-8a06-ffbe237d7387" />
+
 - 데이터셋 버전이 생성되면 versions 들어가서 **Download dataset** 클릭
 - 원하는 다운로드 포맷 설정 -> YOLOv8 추천!
   - **Download zip to computer**: 로컬로 직접 다운로드.
   - **Show download code**: 파이썬 등 코드로 바로 다운로드 받을 수 있음
+ 
+<img width="1705" height="975" alt="스크린샷 2025-07-25 01 08 49" src="https://github.com/user-attachments/assets/6bbe91fb-7fc7-4966-a5c3-596ba12b6e07" />
+
   - Show download code를 누르면 아래처럼 예시 코드가 뜸
 
 #### 예시 (Python 다운로드 코드)
