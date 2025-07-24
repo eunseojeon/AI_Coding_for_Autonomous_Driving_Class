@@ -43,14 +43,15 @@
 
 - 모든 이미지의 라벨링이 완료되면, **Add images to dataset** 메뉴에서 이미지들을 train/valid/test로 분할.
 - **Generate New Version**을 클릭해 새로운 데이터셋 버전 생성
-- 필요한 경우 전처리(Augmentation) 옵션을 설정할 수 있음[
+- 필요한 경우 전처리(Augmentation) 옵션을 설정할 수 있음
 
 ### 5. 데이터셋 다운로드/API 코드 복사
 
-- 데이터셋 버전이 생성되면 **Export Dataset** 클릭.
-- 원하는 포맷(YOLO, COCO, VOC 등)과 다운로드 방식을 선택.
+- 데이터셋 버전이 생성되면 versions 들어가서 **Download dataset** 클릭
+- 원하는 다운로드 포맷 설정 -> YOLOv8 추천!
   - **Download zip to computer**: 로컬로 직접 다운로드.
   - **Show download code**: 파이썬 등 코드로 바로 다운로드 받을 수 있음
+  - Show download code를 누르면 아래처럼 예시 코드가 뜸
 
 #### 예시 (Python 다운로드 코드)
 ```python
