@@ -8,11 +8,11 @@
 ## ❕주요 특징
 
 - **로우코드 인터페이스**: 복잡한 딥러닝 코드 필요 없음. 주로 커맨드라인, Jupyter Notebook 기반.
-- **Transfer Learning 활용**: NVIDIA가 제공하는 수백 개의 사전 훈련 모델(Pretrained Models)을 시작점으로 custom dataset을 적용, 빠른 개발[1][2][3].
-- **모델 프루닝(Pruning)**: 불필요한 노드를 제거하여 모델 크기 및 메모리 사용량을 줄이고, 추론 성능을 크게 향상[2][5].
-- **AutoML/자동 최적화**: 하이퍼파라미터 자동 검색, 모델 자동 튜닝 지원[6][3].
-- **다양한 배포 옵션**: DeepStream, Triton Inference Server, TensorRT, Riva 등과의 자연스러운 통합[1][2][7].
-- **멀티 GPU, 멀티 노드 지원**: 대규모/고성능 분산 학습 가속화[3].
+- **Transfer Learning 활용**: NVIDIA가 제공하는 수백 개의 사전 훈련 모델(Pretrained Models)을 시작점으로 custom dataset을 적용, 빠른 개발
+- **모델 프루닝(Pruning)**: 불필요한 노드를 제거하여 모델 크기 및 메모리 사용량을 줄이고, 추론 성능을 크게 향상
+- **AutoML/자동 최적화**: 하이퍼파라미터 자동 검색, 모델 자동 튜닝 지원
+- **다양한 배포 옵션**: DeepStream, Triton Inference Server, TensorRT, Riva 등과의 자연스러운 통합
+- **멀티 GPU, 멀티 노드 지원**: 대규모/고성능 분산 학습 가속화
 
 ## ❕지원 워크플로우
 
@@ -23,7 +23,7 @@
 - **키포인트/포즈 추정**
 - **Optical Character Detection & Recognition(OCR)**
 - **액션 인식, 변화 탐지 등**  
-대표적인 네트워크 백본과 헤드 구조 조합 지원(Ex. EfficientNet, YOLOv3·v4, DetectNet, ResNet, Transformer 계열)[2][3][5].
+대표적인 네트워크 백본과 헤드 구조 조합 지원(Ex. EfficientNet, YOLOv3·v4, DetectNet, ResNet, Transformer 계열)
 
 ### 2. 대화형 AI(Conversational AI)
 - **음성 인식/합성**
@@ -79,7 +79,7 @@
 - 불필요한 노드(가중치) 제거로 추론 프레임률(FPS), 메모리 효율 대폭 향상
 - 프루닝 후 재학습(retrain)으로 정확도 복구
 - INT8 양자화로 추론 속도 2배↑, 성능 저하 최소화
-- 실시간, 엣지 디바이스에 적합하게 경량화/최적화[2][5]
+- 실시간, 엣지 디바이스에 적합하게 경량화/최적화
 
 ## ❕실사용 예시
 
@@ -88,14 +88,14 @@
 - **의료 영상 진단 자동화**
 - **음성 기반 챗봇/비서**
 - **소매 매장 고객 행동 분석** 등
-- 클라우드, 엔터프라이즈, Jetson 엣지 등 다양한 환경에서 배포 및 운영[1][8].
+- 클라우드, 엔터프라이즈, Jetson 엣지 등 다양한 환경에서 배포 및 운영
 
 ## ❕시작 방법 & 오픈소스 리소스
 
 - **공식 깃허브**  
-  - [NVIDIA/tao_pytorch_backend](https://github.com/NVIDIA/tao_pytorch_backend): PyTorch 백엔드 구현, 컨테이너 내 Jupyter/CLI 환경 활용[7]
-  - [NVIDIA/tao_tutorials](https://github.com/NVIDIA/tao_tutorials): 튜토리얼, 예제 및 시작 코드 제공[9]
-  - [NVIDIA-AI-IOT/nvidia-tao](https://github.com/NVIDIA-AI-IOT/nvidia-tao): 모델 Zoo와 API 활용법 제공[10]
+  - [NVIDIA/tao_pytorch_backend](https://github.com/NVIDIA/tao_pytorch_backend): PyTorch 백엔드 구현, 컨테이너 내 Jupyter/CLI 환경 활용
+  - [NVIDIA/tao_tutorials](https://github.com/NVIDIA/tao_tutorials): 튜토리얼, 예제 및 시작 코드 제공
+  - [NVIDIA-AI-IOT/nvidia-tao](https://github.com/NVIDIA-AI-IOT/nvidia-tao): 모델 Zoo와 API 활용법 제공
 - **NGC Model Zoo**에서 최신 모델 다운로드 및 Doc 활용
 - **설치:**  
   - pip로 파이썬 패키지(`nvidia-tao`) 설치 후 docker 기반 명령어 환경 활용
