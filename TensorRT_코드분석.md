@@ -5,8 +5,9 @@
 ```
 import os
 os.makedirs('/content/dataset', exist_ok=True)
-# 만약 /content/dataset 폴더가 없다면 새로 만듭니다.
 ```
+- 만약 `/content/dataset` 폴더가 없다면 새로 만듭니다.
+
 ---
 
 ### 여러번 실패해서 생긴 파일 때문에 헷갈릴 때, 필요없는 파일을 삭제하려고 쓰는 코드
@@ -24,9 +25,9 @@ for filename in os.listdir(folder):
             shutil.rmtree(file_path)  # 폴더(디렉토리) 삭제
     except Exception as e:
         print(f'Failed to delete {file_path}. Reason: {e}')
-
-#위 코드는 아래 코드들에서 오류났을 때, 새로운 파일이 생기니까 그 파일을 다 삭제해주는 코드! (리셋느낌)
 ```
+- 위 코드는 아래 코드들에서 오류났을 때, 새로운 파일이 생기니까 그 파일을 다 삭제해주는 코드! (리셋느낌)
+
 ---
 
 ### Zip 파일을 이용해야 하는데 없어서 추가해주기
@@ -98,7 +99,7 @@ print(f"커스텀 모델 클래스 수: {len(custom_model.names)}")
 ```
 #### 2️⃣ TensorRT로 변환
 ```
-print("\n⚡ TensorRT 변환 중...")
+print("\n⚡️ TensorRT 변환 중...")
 print("기본 모델 → TensorRT 변환...")
 # base_model.export(format='engine', half=True, device='cpu')  # FP16 최적화. cpu는 돌아가지 않아서 주석처리 한 것.
 base_model.export(format='engine', half=True, device=0)  # 또는 device='cuda:0'
