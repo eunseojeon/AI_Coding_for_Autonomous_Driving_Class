@@ -44,8 +44,8 @@ uploaded = files.upload()
 ```
 ---
 
-### 유튜브 영상 다운로드 후 객체 인식해주는 영상 저장
-#### YOLO 구현체를 쉽게 사용할 수 있게 해주는 라이브러리
+### 🚗 유튜브 영상 다운로드 후 객체 인식해주는 영상 저장
+#### ✏️ YOLO 구현체를 쉽게 사용할 수 있게 해주는 라이브러리
 ```
 !pip install ultralytics yt-dlp #YOLO 구현체를 쉽게 사용할 수 있게 해주는 라이브러리
 
@@ -58,7 +58,7 @@ import shutil
 import time
 ```
 
-#### yaml 수정 (핵심 문제 해결)
+#### ✏️ yaml 수정 (핵심 문제 해결)
 ```
 yaml_fix = '''path: /content/dataset
 train: train/images
@@ -68,7 +68,7 @@ names:
   1: traffic_sign
 nc: 2'''
 ```
-#### 파일을 'dataset.yaml' 이름으로 저장하여 나중에 모델 평가 때 사용
+#### ❗️ 파일을 'dataset.yaml' 이름으로 저장하여 나중에 모델 평가 때 사용
 ```
 with open('/content/dataset.yaml', 'w') as f:
     f.write(yaml_fix) #이 파일을 'dataset.yaml' 이름으로 저장하여 나중에 모델 평가 때 사용
@@ -76,17 +76,17 @@ with open('/content/dataset.yaml', 'w') as f:
 print("🚀 TensorRT 최적화 YOLO 추론 시작!")
 print("="*60)
 ```
-
+#### 1️⃣ 기본 모델들 로드
 ```
-# 1️⃣ 기본 모델들 로드
 print("🤖 기본 모델 로드 중...")
 base_model = YOLO('yolo11n.pt') # 미리 학습된 기본 YOLO 모델
 custom_model = YOLO('/content/dataset/best.pt') # 내가 학습시킨 커스텀 모델
 
 print(f"기본 모델 클래스 수: {len(base_model.names)}")
 print(f"커스텀 모델 클래스 수: {len(custom_model.names)}")
-
-# 2️⃣ TensorRT로 변환
+```
+#### 2️⃣ TensorRT로 변환
+```
 print("\n⚡ TensorRT 변환 중...")
 print("기본 모델 → TensorRT 변환...")
 # base_model.export(format='engine', half=True, device='cpu')  # FP16 최적화. cpu는 돌아가지 않아서 주석처리 한 것.
@@ -94,32 +94,37 @@ base_model.export(format='engine', half=True, device=0)  # 또는 device='cuda:0
 base_trt_path = 'yolo11n.engine'
 
 print("커스텀 모델 → TensorRT 변환...")
-#custom_model.export(format='engine', half=True, device='cpu') #이것도 cpu는 돌아가지 않아서 주석처리 한 것
+#custom_model.export(format='engine', half=True, device='cpu') # 이것도 cpu는 돌아가지 않아서 주석처리 한 것
 custom_model.export(format='engine', half=True, device=0)  # 또는 device='cuda:0'
 custom_trt_path = '/content/dataset/best.engine'
+```
+- `export()` 함수로 PyTorch YOLO 모델을 TensorRT 엔진 파일(.engine)로 변환
+- `format='engine'`은 TensorRT를 의미하며, NVIDIA GPU에서 고속 추론을 위해 사용하는 형식입니다.
+- `half=True`는 FP16(16-bit) 연산을 써서 GPU 속도를 높이는 최적화 옵션.
+- `device=0`은 GPU 0번 장치를 사용한다는 뜻, 반드시 GPU 환경에서만 가능하며 CPU는 지원 안 됩니다.
+- 이렇게 변환하면 **원본 PyTorch 모델 대비 추론 속도가 크게 빨라집**니다.
 
-# export() 함수로 PyTorch YOLO 모델을 TensorRT 엔진 파일(.engine)로 변환
-# format='engine'은 TensorRT를 의미하며, NVIDIA GPU에서 고속 추론을 위해 사용하는 형식입니다.
-# half=True는 FP16(16-bit) 연산을 써서 GPU 속도를 높이는 최적화 옵션이에요.
-# device=0은 GPU 0번 장치를 사용한다는 뜻, 반드시 GPU 환경에서만 가능하며 CPU는 지원 안 됩니다.
-# 이렇게 변환하면 원본 PyTorch 모델 대비 추론 속도가 크게 빨라집니다.
 
-
-# 3️⃣ TensorRT 모델 로드
+#### 3️⃣ TensorRT 모델 로드
+```
 print("\n🔥 TensorRT 모델 로드 중...")
 base_trt_model = YOLO(base_trt_path)
 custom_trt_model = YOLO(custom_trt_path) #이렇게 .engine으로 변환된 TensorRT 모델 파일을 다시 불러옵니다. 이제 이 모델들로 추론을 할 수 있음
 
 print("✅ TensorRT 모델 로드 완료!")
+```
 
-# 4️⃣ 유튜브 영상 다운로드 및 경로 찾기
+#### 4️⃣ 유튜브 영상 다운로드 및 경로 찾기
+```
 print("\n📥 YouTube 영상 다운로드 중...")
 !yt-dlp -f 'best[height<=720]' -o '/content/test_video.%(ext)s' 'https://www.youtube.com/watch?v=AxLmroTo3rQ'
 
 video_path = glob.glob('/content/test_video.*')[0]
 print(f"✅ 다운로드 완료: {video_path}")
+```
 
-# 5️⃣ 성능 비교 함수
+#### 5️⃣ 성능 비교 함수
+```
 def performance_comparison(video_path, frames_to_test=100):
     """PyTorch vs TensorRT 성능 비교""" #첫 100 프레임 정도에 대해 각각 PyTorch 기본 + 커스텀 모델, TensorRT 기본 + 커스텀 모델로 추론 시간을 측정
 
@@ -178,8 +183,10 @@ def performance_comparison(video_path, frames_to_test=100):
 
 # 성능 비교 실행
 speedup_ratio = performance_comparison(video_path)
+```
 
-# 6️⃣ TensorRT 최적화된 결합 추론
+#### 6️⃣ TensorRT 최적화된 결합 추론
+```
 def tensorrt_combined_inference(video_path, output_path='/content/tensorrt_result.mp4'):
     """TensorRT 최적화된 결합 추론"""
 
@@ -268,12 +275,16 @@ def tensorrt_combined_inference(video_path, output_path='/content/tensorrt_resul
     print(f"📊 평균 처리 속도: {avg_fps:.1f} FPS")
 
     return avg_fps
+```
 
-# 7️⃣ TensorRT 최적화된 추론 실행
+#### 7️⃣ TensorRT 최적화된 추론 실행
+```
 print("\n🔥 TensorRT 최적화된 결합 추론 실행...")
 tensorrt_fps = tensorrt_combined_inference(video_path, '/content/tensorrt_final_result.mp4')
+```
 
-# 8️⃣ 기존 PyTorch 추론도 실행 (비교용)
+#### 8️⃣ 기존 PyTorch 추론도 실행 (비교용)
+```
 print("\n🐍 PyTorch 기존 추론 (비교용)...")
 def pytorch_combined_inference(video_path, output_path='/content/pytorch_result.mp4'):
     cap = cv2.VideoCapture(video_path) #동영상 파일을 한장씩 읽어들일 준비
@@ -318,14 +329,18 @@ def pytorch_combined_inference(video_path, output_path='/content/pytorch_result.
 pytorch_fps = pytorch_combined_inference(video_path)
 #실제로 위 함수를 실행하고, 계산된 PyTorch FPS 값을 변수로 저장.
 #이 값이 나중에 TensorRT 결과(FPS)와 비교 기준이 됩니다.
+```
 
 
-# 9️⃣ 성능 평가 (커스텀 모델)
+#### 9️⃣ 성능 평가 (커스텀 모델)
+```
 print("\n📊 커스텀 모델 성능 평가:")
 metrics = custom_model.val(data='/content/dataset.yaml')  # custom_trt_model 대신 custom_model
 print(f"mAP50: {metrics.box.map50:.4f}")
+```
 
-# 🔟 최종 결과 및 비교
+#### 🔟 최종 결과 및 비교
+```
 print("\n" + "="*60)
 print("🎯 최종 성능 비교 결과:")
 print(f"🐍 PyTorch: {pytorch_fps:.1f} FPS")
