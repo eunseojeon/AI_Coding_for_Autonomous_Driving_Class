@@ -9,7 +9,7 @@ os.makedirs('/content/dataset', exist_ok=True)
 ```
 ---
 
-### 여러번 실패해서 생긴 파일 때문에 헷갈릴 때, 파일을 삭제하려고 쓰는 코드
+### 여러번 실패해서 생긴 파일 때문에 헷갈릴 때, 필요없는 파일을 삭제하려고 쓰는 코드
 ```
 import shutil
 import os
