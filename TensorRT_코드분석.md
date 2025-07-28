@@ -68,6 +68,10 @@ names:
   1: traffic_sign
 nc: 2'''
 ```
+- 내가 가지고 있는 dataset.yaml 파일도 들어가서 저렇게 수정해주기
+
+<img width="617" height="244" alt="스크린샷 2025-07-28 18 23 22" src="https://github.com/user-attachments/assets/c3cf695e-6634-4c82-b3f6-5b6701c081e9" />
+
 #### ❗️ 파일을 'dataset.yaml' 이름으로 저장하여 나중에 모델 평가 때 사용
 ```
 with open('/content/dataset.yaml', 'w') as f:
@@ -76,6 +80,7 @@ with open('/content/dataset.yaml', 'w') as f:
 print("🚀 TensorRT 최적화 YOLO 추론 시작!")
 print("="*60)
 ```
+
 #### 1️⃣ 기본 모델들 로드
 ```
 print("🤖 기본 모델 로드 중...")
