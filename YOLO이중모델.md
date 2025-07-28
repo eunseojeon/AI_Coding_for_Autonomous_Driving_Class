@@ -88,3 +88,102 @@ print(f"Recall: {metrics.box.mr:.4f}")
 print("\n✅ 모든 작업 완료!")
 ```
 
+---
+
+### 💻 dataset.yaml 파일 내용 확인
+```
+print("📋 dataset.yaml 파일 내용:")
+with open('/content/dataset/dataset.yaml', 'r') as f:
+    yaml_content = f.read()
+    print(yaml_content)
+```
+- 📋 dataset.yaml 파일 내용:
+```
+path: /content/dataset
+train: train/images
+val: valid/images
+names:
+  0: lane
+  1: traffic_sign
+```
+
+---
+```
+!pip install ultralytics yt-dlp
+
+from ultralytics import YOLO
+import glob
+```
+- `ultralytics`: 최신 YOLO 모델 사용을 위한 라이브러리. YOLOv8 등 최신 버전을 쉽게 사용할 수 있게 해줌
+- `yt-dlp`: 유튜브나 다른 동영상 플랫폼에서 영상을 다운로드하는 도구. youtube-dl의 fork 버전
+
+### yaml 수정 (핵심 문제 해결)
+```
+yaml_fix = '''path: /content/dataset
+train: train/images
+val: /content/dataset/valid/images
+names:
+  0: lane
+  1: traffic_sign
+nc: 2'''
+
+with open('/content/dataset/dataset_fixed.yaml', 'w') as f:
+    f.write(yaml_fix)
+```
+- 용도: 데이터셋 설정용 yaml 파일 내용 정의 후 저장
+- path: 데이터 루트 경로 (예: `/content/dataset`)
+- train: 훈련 이미지 폴더 경로(루트 기준 상대 경로)/content/dataset/train/images 로 해석됨
+- val: 검증(validation) 이미지 폴더 경로 (절대경로로 지정됨)
+- names: 클래스 이름 매핑 (0번 클래스='lane', 1번 클래스='traffic_sign')
+- nc: 클래스 개수 (2개)
+- 이 yaml 파일은 모델 학습과 검증 시 클래스 및 데이터 경로를 읽는 데 사용됨.
+- 원본 yaml파일 경로나 경로 설정 잘못된 경우 이를 해결하기 위한 수정판을 직접 씀.
+
+<img width="475" height="200" alt="스크린샷 2025-07-28 19 24 36" src="https://github.com/user-attachments/assets/2aad478d-3083-496f-af60-b15bc772fa9c" />
+
+- 내가 가지고 있는 yaml파일도 똑같이 수정해줌
+
+### 모델 로드 & 영상 다운로드
+```
+model = YOLO('/content/dataset/best.pt') # 인자로 사전학습/커스텀 학습된 모델 가중치 (best.pt) 파일 경로 지정
+!yt-dlp -f 'best[height<=720]' -o '/content/test_video.%(ext)s' 'https://www.youtube.com/watch?v=AxLmroTo3rQ' #유튜브 영상 다운로드
+```
+### 다운로드된 영상 경로 찾기 및 추론
+```
+video_files = glob.glob('/content/test_video.*')
+if video_files:
+    video_path = video_files[0]
+    print(f"📹 다운로드된 영상: {video_path}")
+
+    # 찾은 영상 파일을 YOLO 모델에 넣어 객체 탐지 등 추론을 수행.
+    results = model(video_path)
+
+    # 결과가 있으면(=추론이 정상 실행되면) 표시 (영상의 경우 첫 번째 프레임만)
+    if results:
+        results[0].show()
+else:
+    print("❌ 영상 다운로드 실패")
+
+# 성능 평가
+print("\n📊 모델 성능 평가:")
+metrics = model.val(data='/content/dataset/dataset_fixed.yaml')
+print(f"mAP50: {metrics.box.map50:.4f}")
+print(f"mAP50-95: {metrics.box.map:.4f}")
+print(f"Precision: {metrics.box.mp:.4f}")
+print(f"Recall: {metrics.box.mr:.4f}")
+
+print("\n✅ 모든 작업 완료!")
+```
+- metrics 객체의 box 속성을 통해 박스 단위의 성능 지표 반환
+- mAP50: IoU 0.5 기준 평균 정밀도 (mean Average Precision)
+- mAP50-95: IoU 0.5 ~ 0.95 까지 단계별 mAP 평균값
+- Precision(mp): 정확도 (클래스 예측 중 정답 비율)
+- Recall(mr): 재현율 (실제 객체 중 검출된 비율)
+- .4f: 소수점 4자리까지 포맷팅 출력
+
+
+
+
+
+
+
