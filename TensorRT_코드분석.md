@@ -347,7 +347,7 @@ print("- best.engine: 커스텀 모델 TensorRT 엔진")
 <img width="1710" height="1008" alt="스크린샷 2025-07-28 16 30 10" src="https://github.com/user-attachments/assets/c04726cb-1254-4246-b7b0-6878e71caa5d" />
 
 ### 주의사항
-- 경로 주의하기
+- '/content/dataset.yaml', '/content/dataset/best.pt'와 같은 **경로** 틀리지 않게 **주의하기**
 - CPU는 돌아가지 않으므로 **GPU로 런타임 유형 변경** 후 실행하기
 
 
