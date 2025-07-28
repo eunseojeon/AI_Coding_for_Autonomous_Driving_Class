@@ -47,6 +47,7 @@ uploaded = files.upload()
 <img width="384" height="168" alt="스크린샷 2025-07-28 18 26 23" src="https://github.com/user-attachments/assets/6eda592d-fbcd-4f94-925f-3e9c26e95cc0" />
 
 - 처음에 이미지가 포함되어 있는 이 Zip파일을 넣는 걸 몰라서 계속 오류가 뜸 -> **Zip파일 꼭 넣어주기!**
+- (현재 GPU사용이 끝나서 경로가 사라짐 ㅜㅜ 내일 경로 위주로 찾아서 다시 깃허브에 업로드 할 예정)
 ---
 
 ### 🚗 유튜브 영상 다운로드 후 객체 인식해주는 영상 저장
