@@ -9,7 +9,7 @@ os.makedirs('/content/dataset', exist_ok=True)
 ```
 ---
 
-### 여러번 실패해서 생긴 파일 때문에 헷갈릴 때 쓰는 코드
+### 여러번 실패해서 생긴 파일 때문에 헷갈릴 때, 파일을 삭제하려고 쓰는 코드
 ```
 import shutil
 import os
@@ -35,12 +35,14 @@ from google.colab import files
 uploaded = files.upload()
 #파일 업로드 (dataset.zip파일을 업로드해야함)
 ```
+---
 
 ### 압축된 파일을 해제해줌
 ```
 !unzip /content/dataset.zip -d /content/dataset/
 #압축해제
 ```
+---
 
 ### 유튜브 영상 다운로드 후 객체 인식해주는 영상 저장
 ```
@@ -339,7 +341,14 @@ print("- pytorch_result.mp4: PyTorch 비교용 결과")
 print("- yolo11n.engine: 기본 모델 TensorRT 엔진")
 print("- best.engine: 커스텀 모델 TensorRT 엔진")
 ```
+---
 
+### 최종 영상 캡쳐본
+<img width="1710" height="1008" alt="스크린샷 2025-07-28 16 30 10" src="https://github.com/user-attachments/assets/c04726cb-1254-4246-b7b0-6878e71caa5d" />
+
+### 주의사항
+- 경로 주의하기
+- CPU는 돌아가지 않으므로 **GPU로 런타임 유형 변경** 후 실행하기
 
 
 
