@@ -42,6 +42,10 @@ uploaded = files.upload()
 !unzip /content/dataset.zip -d /content/dataset/
 #압축해제
 ```
+- Zip파일 안에 들어있는 것
+
+<img width="396" height="168" alt="스크린샷 2025-07-28 18 25 02" src="https://github.com/user-attachments/assets/a2574628-9c99-407c-b241-83806a445440" />
+
 ---
 
 ### 🚗 유튜브 영상 다운로드 후 객체 인식해주는 영상 저장
