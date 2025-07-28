@@ -45,6 +45,7 @@ uploaded = files.upload()
 ---
 
 ### 유튜브 영상 다운로드 후 객체 인식해주는 영상 저장
+#### YOLO 구현체를 쉽게 사용할 수 있게 해주는 라이브러리
 ```
 !pip install ultralytics yt-dlp #YOLO 구현체를 쉽게 사용할 수 있게 해주는 라이브러리
 
@@ -55,8 +56,10 @@ import numpy as np
 from IPython.display import Video
 import shutil
 import time
+```
 
-# yaml 수정 (핵심 문제 해결)
+#### yaml 수정 (핵심 문제 해결)
+```
 yaml_fix = '''path: /content/dataset
 train: train/images
 val: valid/images
@@ -64,13 +67,17 @@ names:
   0: lane
   1: traffic_sign
 nc: 2'''
-
+```
+#### 파일을 'dataset.yaml' 이름으로 저장하여 나중에 모델 평가 때 사용
+```
 with open('/content/dataset.yaml', 'w') as f:
     f.write(yaml_fix) #이 파일을 'dataset.yaml' 이름으로 저장하여 나중에 모델 평가 때 사용
 
 print("🚀 TensorRT 최적화 YOLO 추론 시작!")
 print("="*60)
+```
 
+```
 # 1️⃣ 기본 모델들 로드
 print("🤖 기본 모델 로드 중...")
 base_model = YOLO('yolo11n.pt') # 미리 학습된 기본 YOLO 모델
