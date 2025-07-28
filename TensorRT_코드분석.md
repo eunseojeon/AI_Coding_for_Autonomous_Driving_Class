@@ -68,7 +68,7 @@ names:
   1: traffic_sign
 nc: 2'''
 ```
-- 내가 가지고 있는 dataset.yaml 파일도 들어가서 저렇게 수정해주기
+- 내가 가지고 있는 dataset.yaml 파일도 visual studio로 들어가서 저렇게 수정해주기
 
 <img width="617" height="244" alt="스크린샷 2025-07-28 18 23 22" src="https://github.com/user-attachments/assets/c3cf695e-6634-4c82-b3f6-5b6701c081e9" />
 
