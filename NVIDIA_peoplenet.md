@@ -1,4 +1,4 @@
-# 📝 Runpods에서 peoplenet 정리하기
+# 📝 Nvidia peoplenet 정리하기
 
 - NVIDIA PeopleNet은 이미지 및 영상에서 **사람(person), 가방(bag), 얼굴(face)** 을 검출하는 사전 학습된 딥러닝 모델입니다.
 - Runpods 같은 클라우드 환경이나 로컬에서 이 모델을 사용해 영상 내 객체를 빠르고 정확하게 찾아내는데 주로 활용됩니다.
@@ -24,13 +24,13 @@
 - 가려진(occluded) 사람은 머리와 어깨 일부라도 보이면 감지 가능하지만, 많이 가려지면 인식 어려움.
 - INT8 양자화 모델도 제공되어 경량화 및 추론 속도 향상 가능.
 
-###  Runpods 같은 환경에서의 활용  
+### 💻 Runpods 같은 환경에서의 활용  
 - Runpods나 Colab 등의 클라우드 GPU 환경에서 PeopleNet을 내려받아 ONNX Runtime으로 실행할 수 있음.
 - 사전 준비로 필요한 도구(압축 해제, 다운로드, 동영상 처리 도구) 설치 필요.
 - yt-dlp로 유튜브 영상 등을 가져와 프레임별 사람 검출 실험 가능.
 - 디버깅용 상세 로그를 제공하는 Python 클래스 형태 코드로 쉽게 실험 및 튜닝 가능.
 
-### 간단 정리 
+### ✏️ 간단 정리 
 
 | 특징               | 내용                                                       |
 |------------------|----------------------------------------------------------|
@@ -42,14 +42,14 @@
 | 성능 환경 제약        | 밝은 조명 조건, 선명한 영상에서 좋은 성능, IR/어두운 환경 취약         |
 | 클라우드 환경 활용 가능 | Runpods, Colab 등에 쉽게 통합하여 ONNX Runtime 기반 분석 가능            |
 
-### 참고 링크  
+### 💻 참고 링크  
 - NVIDIA 공식 PeopleNet 모델 설명: [NVIDIA NGC PeopleNet](https://catalog.ngc.nvidia.com/orgs/nvidia/teams/tao/models/peoplenet)
 - NVIDIA Docs: [PeopleNet 모델 개요](https://docs.nvidia.com/tao/tao-toolkit-archive/tao-30-2205/text/model_zoo/cv_models/peoplenet.html)
 - DeepStream과 TAO Toolkit 활용 사례: [NVIDIA DeepStream 블로그](https://developer.nvidia.com/ko-kr/blog/building-an-end-to-end-retail-analytics-application-with-nvidia-deepstream-and-nvidia-tao-toolkit/)
 
 ---
 
-### 교수님께서 주신 코드 정리하기
+### ✏️ 교수님께서 주신 코드 정리하기
 [코드 보러가기](0730_peoplenet.ipynb)
 ```
 #Open In Colab
