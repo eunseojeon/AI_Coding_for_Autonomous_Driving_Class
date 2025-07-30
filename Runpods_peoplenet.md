@@ -1,7 +1,56 @@
 # 📝 Runpods에서 peoplenet 정리하기
 
+- NVIDIA PeopleNet은 이미지 및 영상에서 **사람(person), 가방(bag), 얼굴(face)** 을 검출하는 사전 학습된 딥러닝 모델입니다.
+- Runpods 같은 클라우드 환경이나 로컬에서 이 모델을 사용해 영상 내 객체를 빠르고 정확하게 찾아내는데 주로 활용됩니다.
+
+### ❗️ NVIDIA PeopleNet 이란?
+- **모델 목적:** RGB 이미지 또는 영상에서 사람, 가방, 얼굴을 감지하는 객체 탐지 모델입니다.
+- **기술적 기반:**  
+  - **DetectNet_v2** 객체 탐지기 아키텍처에 **ResNet34**를 특징 추출기(Feature Extractor)로 사용합니다.  
+  - ‘GridBox’ 방식으로 입력 이미지를 격자(grid)로 나누어 각 격자 셀마다 바운딩 박스 위치(xc, yc, w, h)와 신뢰도(confidence)를 예측합니다.
+- **출력:** 각 객체 별 바운딩 박스 좌표와 클래스(사람, 가방, 얼굴) 및 신뢰도 점수.
+- **입력:** RGB 색상 이미지, 고정 해상도 960×544 (너비×높이), 채널 순서 NCHW(배치, 채널, 높이, 너비) 형식.
+
+### 🚗 동작 방식
+1. 이미지가 모델에 입력되면 CNN은 특징 맵(feature map)을 추출.
+2. DetectNet의 GridBox 방식으로 균일하게 나눈 격자 별로 객체 바운딩 박스와 신뢰도 예측.
+3. raw 출력(바운딩 박스 위치와 신뢰도)을 후처리(예: Non-Maximum Suppression, DBSCAN)하여 최종 검출 결과 생성.
+4. 결과는 원본 이미지 크기에 맞게 좌표 변환 후 출력.
+
+### ❗️ 특징 및 제한점
+- 사람 객체 감지가 최우선이며, 가방과 얼굴 클래스도 포함되나 정확도는 사람 클래스보다 낮습니다.
+- 모델은 양질의 RGB 이미지와 좋은 조명 환경에서 최적 성능 발휘.
+- 어두운 환경, 단색(monochrome), IR 이미지, 어안렌즈, 움직임에 의한 블러 영향 받음.
+- 가려진(occluded) 사람은 머리와 어깨 일부라도 보이면 감지 가능하지만, 많이 가려지면 인식 어려움.
+- INT8 양자화 모델도 제공되어 경량화 및 추론 속도 향상 가능.
+
+###  Runpods 같은 환경에서의 활용  
+- Runpods나 Colab 등의 클라우드 GPU 환경에서 PeopleNet을 내려받아 ONNX Runtime으로 실행할 수 있음.
+- 사전 준비로 필요한 도구(압축 해제, 다운로드, 동영상 처리 도구) 설치 필요.
+- yt-dlp로 유튜브 영상 등을 가져와 프레임별 사람 검출 실험 가능.
+- 디버깅용 상세 로그를 제공하는 Python 클래스 형태 코드로 쉽게 실험 및 튜닝 가능.
+
+### 간단 정리 
+
+| 특징               | 내용                                                       |
+|------------------|----------------------------------------------------------|
+| 모델 종류           | CNN 기반 객체 탐지 (DetectNet_v2 + ResNet34)                  |
+| 검출 대상           | 사람(person), 가방(bag), 얼굴(face)                         |
+| 입력 이미지 크기      | 960×544 RGB 이미지, NCHW 포맷                                 |
+| 후처리              | Non-Maximum Suppression(NMS) 등으로 중복 감지 제거               |
+| 용도                | 영상 및 이미지 내 사람과 관련 객체 탐지, 보안/소매/분석 등에 활용    |
+| 성능 환경 제약        | 밝은 조명 조건, 선명한 영상에서 좋은 성능, IR/어두운 환경 취약         |
+| 클라우드 환경 활용 가능 | Runpods, Colab 등에 쉽게 통합하여 ONNX Runtime 기반 분석 가능            |
+
+### 참고 링크  
+- NVIDIA 공식 PeopleNet 모델 설명: [NVIDIA NGC PeopleNet](https://catalog.ngc.nvidia.com/orgs/nvidia/teams/tao/models/peoplenet)
+- NVIDIA Docs: [PeopleNet 모델 개요](https://docs.nvidia.com/tao/tao-toolkit-archive/tao-30-2205/text/model_zoo/cv_models/peoplenet.html)
+- DeepStream과 TAO Toolkit 활용 사례: [NVIDIA DeepStream 블로그](https://developer.nvidia.com/ko-kr/blog/building-an-end-to-end-retail-analytics-application-with-nvidia-deepstream-and-nvidia-tao-toolkit/)
+
+---
+
 ### 교수님께서 주신 코드 정리하기
-[코드 정리](0730_peoplenet.ipynb)
+[코드 보러가기](0730_peoplenet.ipynb)
 ```
 #Open In Colab
 
