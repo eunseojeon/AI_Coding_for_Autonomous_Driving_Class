@@ -1,6 +1,7 @@
-# Runpods에서 peoplenet 정리하기
+# 📝 Runpods에서 peoplenet 정리하기
 
-### 일단 교수님께서 주신 코드 정리하기
+### 교수님께서 주신 코드 정리하기
+[코드 정리](0730_peoplenet.ipynb)
 ```
 #Open In Colab
 
