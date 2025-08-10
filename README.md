@@ -71,7 +71,6 @@ GitHub에서는 `README.md` 파일을 통해 마크다운을 많이 사용합니
 | 목록        | `-`, `*`         | `- 사과` <br> `- 배`          | ● 사과 <br> ● 배            |
 | 숫자 목록     | `1.`, `2.`       | `1. 첫째` <br> `2. 둘째`       | 1. 첫째 <br> 2. 둘째         |
 | 링크        | `[이름](주소)`       | `[구글](https://google.com)` | [구글](https://google.com) |
-| 이미지       | `![이름](이미지주소)`   | `![고양이](cat.jpg)`          | ![고양이]([img width="512" height="512" alt="image" src="https://github.com/user-attachments/assets/6f4a6001-dbc8-4349-8b83-93643e504c5a"](https://cdn.eyesmag.com/content/uploads/posts/2025/01/22/shutterstock_2491179401-06f50759-c2c5-49cb-b10b-ba47ca6d2166.jpg)       |
 | 코드블록      | \`\`\`python     | `print("Hello")`           | 코드박스                     |
 | 인라인 코드    | \`코드\`           | \`a = 3\`                  | `a = 3`                  |
 | 구분선       | `---`            | `---`                      | ―――                      |
@@ -80,7 +79,7 @@ GitHub에서는 `README.md` 파일을 통해 마크다운을 많이 사용합니
 ### 📷 4. 사진 넣는 방법
 **복사 후 붙여넣기**
 
-![귀여운고양이사진_(1)](https://github.com/user-attachments/assets/df528223-e781-4136-a7d4-5a1bdffcd99c)
+![귀여운고양이사진](https://github.com/user-attachments/assets/df528223-e781-4136-a7d4-5a1bdffcd99c)
 
 
 ### ⛓️‍💥 5. 링크 삽입 방법
