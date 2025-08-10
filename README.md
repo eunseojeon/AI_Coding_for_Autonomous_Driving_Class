@@ -167,7 +167,7 @@ GitHub에서는 `README.md` 파일을 통해 마크다운을 많이 사용합니
 - [데이터 구조 개요](./data_structures.md)
 - [Pandas](./pandas.md)
 - [NumPy](./NumPy.md)
-- [./Matplotlib.md](https://github.com/eunseojeon/Matplotlib))
+- [Matplotlib.md](https://github.com/eunseojeon/Matplotlib)
 
 ## 4. Machine Learning
 
