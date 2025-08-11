@@ -36,6 +36,117 @@
 | 통합/연동           | (직접 추론 가능, Torch-TensorRT 등으로 최적화 가능)    | 파이토치/TensorFlow/ONNX 등 다양한 훈련 모델 지원 |
 | 학습(Training) 지원 | 가능                                                | 불가(단, 추론만 가능)                            |
 
+
+
+### ❗️ TensorRT 예제 코드 및 설명
+
+```python
+import tensorrt as trt
+import pycuda.driver as cuda
+import pycuda.autoinit
+import numpy as np
+
+TRT_LOGGER = trt.Logger(trt.Logger.WARNING)
+
+def build_engine(onnx_file_path):
+    with trt.Builder(TRT_LOGGER) as builder, builder.create_network(1) as network, trt.OnnxParser(network, TRT_LOGGER) as parser:
+        builder.max_batch_size = 1
+        builder.max_workspace_size = 1 << 30  # 1GB workspace
+        
+        with open(onnx_file_path, 'rb') as model:
+            parser.parse(model.read())
+        
+        engine = builder.build_cuda_engine(network)
+        return engine
+
+def infer(engine, input_data):
+    context = engine.create_execution_context()
+    d_input = cuda.mem_alloc(input_data.nbytes)
+    d_output = cuda.mem_alloc(input_data.nbytes)  # assuming output size = input size for simplicity
+
+    stream = cuda.Stream()
+    cuda.memcpy_htod_async(d_input, input_data, stream)
+    context.execute_async(bindings=[int(d_input), int(d_output)], stream_handle=stream.handle)
+    output_data = np.empty_like(input_data)
+    cuda.memcpy_dtoh_async(output_data, d_output, stream)
+    stream.synchronize()
+    return output_data
+
+# ONNX 모델을 TensorRT 엔진으로 변환하여 추론하는 예제
+onnx_model_path = "model.onnx"
+input_data = np.random.rand(1, 3, 224, 224).astype(np.float32)  # 예시 입력
+engine = build_engine(onnx_model_path)
+output = infer(engine, input_data)
+print("TensorRT inference output shape:", output.shape)
+```
+
+**설명:**
+
+- **TensorRT**는 NVIDIA에서 제공하는 딥러닝 추론 최적화 라이브러리로, 주로 ONNX 모델을 TensorRT 엔진으로 변환해 GPU에서 최적화된 추론을 빠르게 수행합니다.
+- 위 코드는 ONNX 모델 파일을 읽어 TensorRT 엔진을 빌드하고, CUDA 메모리에 데이터를 옮겨 GPU에서 추론을 실행하는 예입니다.
+- TensorRT는 최적화된 연산과 INT8, FP16 정밀도 지원으로 추론 속도를 크게 향상시키는 데 초점을 둡니다.
+
+---
+
+### ❗️ PyTorch 예제 코드 및 설명
+
+```python
+import torch
+import torch.nn as nn
+import torch.optim as optim
+
+# 간단한 선형 모델 정의
+class SimpleModel(nn.Module):
+    def __init__(self):
+        super(SimpleModel, self).__init__()
+        self.linear = nn.Linear(10, 1)  # 입력 10차원, 출력 1차원
+    
+    def forward(self, x):
+        return self.linear(x)
+
+# 모델, 손실함수, 옵티마이저 정의
+model = SimpleModel()
+criterion = nn.MSELoss()
+optimizer = optim.SGD(model.parameters(), lr=0.01)
+
+# 더미 데이터
+inputs = torch.randn(100, 10)
+targets = torch.randn(100, 1)
+
+# 학습 1 에폭 (예시)
+model.train()
+optimizer.zero_grad()
+outputs = model(inputs)
+loss = criterion(outputs, targets)
+loss.backward()
+optimizer.step()
+
+print("PyTorch training loss:", loss.item())
+```
+
+**설명:**
+
+- PyTorch는 딥러닝 연구 및 개발을 위한 프레임워크로, 동적 계산 그래프와 직관적인 인터페이스를 제공하여 모델 설계, 학습, 추론을 쉽게 할 수 있습니다.
+- 위 코드는 간단한 선형 회귀 모델을 정의하고, 임의의 입력/출력 데이터에 대해 1회 학습하는 기본 예입니다.
+- TensorRT와 달리 PyTorch는 주로 모델 설계와 학습에 최적화되어 있으며, 연구 및 프로토타이핑에 널리 사용됩니다.
+
+***
+
+### 요약
+
+| 구분          | TensorRT                             | PyTorch                           |
+|---------------|------------------------------------|----------------------------------|
+| 주요 목적     | 고성능 딥러닝 추론(추론 최적화)   | 딥러닝 모델 설계, 학습, 추론 지원|
+| 입력 형식     | 주로 ONNX 모델                     | PyTorch 자체 모델 구조           |
+| 실행환경     | NVIDIA GPU 최적화                   | CPU, GPU 모두 지원               |
+| 사용성        | 주로 최적화 및 배포용               | 연구, 개발, 실험용               |
+| 코드 예제     | ONNX 모델 불러와 엔진 빌드 및 추론 | 모델 정의 및 학습 수행           |
+
+- **TensorRT** 코드는 ONNX 모델을 변환해 추론을 고속 수행하는 데 초점이 있으며,
+- **PyTorch** 코드는 모델을 직접 정의하고 학습시키는 데 초점이 있습니다.
+- 각기 다른 목적에 최적화된 도구임을 이해하면 비교할 때 도움이 됩니다.
+
+
 ## 요약
 
 - **파이토치**는 딥러닝 모델을 설계·학습·평가·추론까지 전 과정을 담당하는 프레임워크
