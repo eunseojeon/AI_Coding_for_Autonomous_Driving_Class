@@ -25,6 +25,7 @@
     - 실제 서비스(자율주행, 실시간 스트리밍, 서버, 임베디드 등)에 "빠른 추론"이 필수일 때 사용  
     - 파이토치 모델을 ONNX 등으로 변환한 뒤 TensorRT로 최적화하는 방식이 일반적
 
+
 ## 주요 비교
 
 | 항목                | 파이토치(PyTorch)                                       | 텐서알티(TensorRT)                              |
@@ -39,7 +40,7 @@
 
 
 
-### ❗️ TensorRT 예제 코드 및 설명
+## ❗️ TensorRT 예제 코드 및 설명
 
 ```python
 import tensorrt as trt
@@ -89,7 +90,7 @@ print("TensorRT inference output shape:", output.shape)
 
 ---
 
-### ❗️ PyTorch 예제 코드 및 설명
+## ❗️ PyTorch 예제 코드 및 설명
 
 ```python
 import torch
@@ -133,7 +134,7 @@ print("PyTorch training loss:", loss.item())
 
 ***
 
-### 요약
+## 요약
 
 | 구분          | TensorRT                             | PyTorch                           |
 |---------------|------------------------------------|----------------------------------|
