@@ -1,4 +1,4 @@
-### 텐서알티(TensorRT)와 파이토치(PyTorch) 비교
+# 텐서알티(TensorRT)와 파이토치(PyTorch) 비교
 
 <img width="1191" height="552" alt="img" src="https://github.com/user-attachments/assets/5681b651-1ebe-44f6-bf5d-43df3d24a7d8" />
 
