@@ -52,6 +52,6 @@
 - https://github.com/matplotlib/matplotlib
 
 ## 8. Matplotlib을 colab에서 직접 실습해보면서 공부하기
-- [Matplotlib_기본_응용](./Matplotlib_기본_응용.ipynb)
+- [Matplotlib_기본_응용](./0703_Matplotlib_기본_응용.ipynb)
 - [Matplotlib_기본_응용2](./Matplotlib_기본_응용2.ipynb)
 - [Matplotlib_기본_응용3](./Matplotlib_기본_응용3.ipynb)
