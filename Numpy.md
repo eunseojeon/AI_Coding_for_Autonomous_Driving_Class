@@ -42,7 +42,7 @@ NumPy의 핵심 객체는 ndarray로, 동일한 데이터 타입을 갖는 원�
 - 배열 인덱싱은 배열 요소에 액세스하는 것과 같다
 - 배열 요소에 접근하려면 인덱스 번호를 참조하면 됩니다.
 - NumPy 배열의 인덱스는 0부터 시작합니다. 즉, 첫 번째 요소의 인덱스는 0이고, 두 번째 요소의 인덱스는 1입니다.
-- [Numpy 배열 인덱싱](./NumPy_배열_인덱싱.ipynb) **<- 실습**
+- [Numpy 배열 인덱싱](./0702_NumPy_배열_인덱싱.ipynb) **<- 실습**
 - https://claude.ai/public/artifacts/6accf154-ceb5-470a-b2e2-543df2d49b4a <- 애니메이션 실습
 
 ## 3. NumPy 배열 Slicing
@@ -52,7 +52,7 @@ NumPy의 핵심 객체는 ndarray로, 동일한 데이터 타입을 갖는 원�
 - 시작을 통과하지 못하면 0으로 간주됩니다
 - 우리가 end를 전달하지 않으면 해당 차원의 배열의 길이가 고려됩니다
 - 만약 우리가 단계를 통과하지 못한다면 그것은 1로 간주됩니다
-- [Numpy 배열 Slicing](./NumPy_배열_Slicing.ipynb) **<- 실습**
+- [Numpy 배열 Slicing](./0702_NumPy_배열_Slicing.ipynb) **<- 실습**
 - https://claude.ai/public/artifacts/fdea1f0a-439f-47d8-b954-956f34693a2e
   
 ## 4. NumPy 데이터 유형
@@ -74,7 +74,7 @@ NumPy의 핵심 객체는 ndarray로, 동일한 데이터 타입을 갖는 원�
 | U | 유니코드 문자열 | unicode string |
 | V | 고정 메모리 조각 | fixed chunk of memory (void) |
 
-- [Numpy 데이터_유형](./NumPy_데이터_유형.ipynb) **<- 실습**
+- [Numpy 데이터_유형](./0702_NumPy_데이터_유형.ipynb) **<- 실습**
 
 ## 5. The Difference Between Copy and View
 - 배열의 복사본과 뷰의 주요 차이점은 복사본은 **새로운 배열**이고, 뷰는 단지 **원본 배열**의 뷰라는 점입니다.
